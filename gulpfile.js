@@ -30,4 +30,4 @@ gulp.task('css', () => {
   .pipe(browserSync.stream())
 })
 
-gulp.task('default', ['browser-sync', 'html', 'css'])
+gulp.task('default', ['browser-sync', 'css'])
