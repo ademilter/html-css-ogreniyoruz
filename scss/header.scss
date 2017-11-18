@@ -4,12 +4,63 @@
   .container {
     display: flex;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 64px;
+  }
+
+  &-logo {
+    img {
+      width: 144px;
+    }
   }
 
   &-menu {
     margin-left: auto;
     display: flex;
+
+    &-user {
+      margin-right: 10px;
+      display: flex;
+      a {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: $finger-size;
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+
+    &-switch {
+
+    }
+
+    &-helper {
+      margin-left: 20px;
+      display: flex;
+
+      select {
+        appearance: none;
+        background-color: transparent;
+        border: 1px solid #E0E6F1;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 0;
+        color: $color-navy;
+        height: $finger-size;
+
+        &:nth-child(1) {
+          border-bottom-left-radius: $border-radius;
+          border-top-left-radius: $border-radius;
+        }
+        &:nth-child(2) {
+          border-left-width: 0;
+          border-bottom-right-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+        }
+      }
+
+    }
   }
 }

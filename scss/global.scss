@@ -3,3 +3,33 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+a {
+  color: $color-navy;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+body {
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: $finger-size;
+  color: white;
+  font-weight: bold;
+  background-color: $color-blue;
+  border-radius: $border-radius;
+}

@@ -442,6 +442,36 @@ td {
   margin-left: auto;
   margin-right: auto; }
 
+a {
+  color: #083B87; }
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor; }
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", Arial, sans-serif; }
+
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  background-color: #01ACEE;
+  border-radius: 3px; }
+
 .Header {
   border-bottom: 1px solid #ddd; }
   .Header .container {
@@ -451,10 +481,51 @@ td {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    height: 64px; }
+  .Header-logo img {
+    width: 144px; }
   .Header-menu {
     margin-left: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    .Header-menu-user {
+      margin-right: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .Header-menu-user a {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 40px; }
+        .Header-menu-user a:hover {
+          background-color: #eee; }
+    .Header-menu-helper {
+      margin-left: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .Header-menu-helper select {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        background-color: transparent;
+        border: 1px solid #E0E6F1;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 0;
+        color: #083B87;
+        height: 40px; }
+        .Header-menu-helper select:nth-child(1) {
+          border-bottom-left-radius: 3px;
+          border-top-left-radius: 3px; }
+        .Header-menu-helper select:nth-child(2) {
+          border-left-width: 0;
+          border-bottom-right-radius: 3px;
+          border-top-right-radius: 3px; }
