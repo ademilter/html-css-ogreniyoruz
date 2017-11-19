@@ -6,7 +6,7 @@ const prefix = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
 const reload = browserSync.reload
 
-gulp.task('browser-sync', ['start'], function () {
+gulp.task('browser-sync', function () {
   browserSync.init({
     server: {
       baseDir: './'
@@ -14,12 +14,6 @@ gulp.task('browser-sync', ['start'], function () {
   })
   gulp.watch('./*.html').on('change', reload)
   gulp.watch('./scss/**/*.scss', ['css'])
-})
-
-gulp.task('start', function () {
-  return nodemon({
-    script: 'server.js'
-  })
 })
 
 gulp.task('css', () => {

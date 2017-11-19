@@ -484,6 +484,9 @@ body {
     height: 64px; }
   .Header-logo img {
     width: 144px; }
+  @media (min-width: 768px) {
+    .Header-switch {
+      display: none; } }
   .Header-menu {
     margin-left: auto;
     display: -webkit-box;
