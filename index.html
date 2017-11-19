@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
@@ -23,7 +24,7 @@
         <img src="img/site-logo.png" alt="">
       </a>
 
-      <button class="Header-switch" type="button">
+      <button class="Header-switch button button-icon" type="button">
         <svg class="icon icon-menu">
           <use xlink:href="#icon-menu"></use>
         </svg>
@@ -34,7 +35,7 @@
           <a href="">Register</a>
           <a href="">Sign In</a>
         </div>
-        <a class="button" href="">List your property</a>
+        <a class="Header-menu-property button button-blue" href="">List your property</a>
         <div class="Header-menu-helper">
           <select>
             <option value="en">En</option>
@@ -47,5 +48,60 @@
     </div>
   </header>
 
+  <nav class="Navigation">
+    <div class="container">
+      <a class="Navigation-item" href="">Menu1</a>
+      <a class="Navigation-item" href="">Menu2</a>
+      <a class="Navigation-item" href="">Menu3</a>
+      <a class="Navigation-item" href="">Menu4</a>
+      <a class="Navigation-item" href="">Menu4</a>
+      <a class="Navigation-item" href="">Menu4</a>
+      <a class="Navigation-item" href="">Menu4</a>
+    </div>
+  </nav>
+
+  <main class="Main">
+    <section class="Showcase">
+      <div class="container">
+        <h1>More deals than days a year</h1>
+        <h3>From cosy country homes to funky city flats</h3>
+
+        <div class="Search">
+          <form class="Search-form" action="">
+            <div>
+              <div>
+                <input type="text">
+              </div>
+              <small>Destination, property name or address</small>
+            </div>
+            <div>
+              <div>
+                <input type="date">
+              </div>
+              <small>When</small>
+            </div>
+            <div>
+              <select>
+                <option value="">123</option>
+              </select>
+            </div>
+            <div>
+              <button type="button">
+                Let's get started
+              </button>
+            </div>
+            <div class="asd">
+              Are you travelling for work?
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

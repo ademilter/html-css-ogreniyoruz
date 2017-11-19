@@ -8,6 +8,7 @@ const reload = browserSync.reload
 
 gulp.task('browser-sync', function () {
   browserSync.init({
+    notify: false,
     server: {
       baseDir: './'
     }

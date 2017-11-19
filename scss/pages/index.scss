@@ -1,0 +1,23 @@
+.Showcase {
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $color-navy;
+}
+
+.Search {
+  background-color: $color-yellow;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(black, .2);
+
+  &-form {
+    position: relative;
+    display: flex;
+  }
+
+  .asd {
+    position: absolute;
+    right: 0;
+  }
+}
