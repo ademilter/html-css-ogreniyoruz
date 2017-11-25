@@ -1,5 +1,10 @@
 body {
   font-family: $font-family;
+  line-height: 1.4;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
 }
 
 .container {
@@ -23,16 +28,24 @@ a {
   fill: currentColor;
 }
 
+.select select, .button, .text {
+  font-family: inherit;
+  border-radius: $border-radius;
+  border: 0;
+  font-weight: bold;
+  background-color: #fff;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center;
   height: $finger-size;
   color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border-radius: $border-radius;
+  background-color: $color-blue;
 
   &-icon {
     justify-content: center;
@@ -40,10 +53,122 @@ a {
     padding-left: 0;
     padding-right: 0;
     width: $finger-size;
+    background-color: transparent;
   }
 
-  &-blue {
-    color: white;
-    background-color: $color-blue;
+  &-full {
+    width: 100%;
   }
+
+  &-navy {
+    background-color: $color-navy;
+  }
+}
+
+.text {
+  min-height: $finger-size;
+  border-radius: $border-radius;
+  color: $color-navy;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+
+  &::placeholder,
+  &::-webkit-datetime-edit {
+    color: rgba($color-navy, .5);
+  }
+}
+
+.select {
+  position: relative;
+  color: $color-navy;
+
+  select {
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    padding-right: 30px;
+    color: $color-navy;
+    height: $finger-size;
+  }
+
+  &-icon {
+    z-index: 1;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.form-item {
+  position: relative;
+
+  .form-item-icon {
+    z-index: 1;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-navy;
+  }
+  .text {
+    padding-left: 40px;
+  }
+
+  .select select {
+    padding-left: 40px;
+  }
+}
+
+.form-description {
+  margin-top: 5px;
+  font-size: $font-size-small;
+  @include mq("tablet") {
+    margin-top: 20px;
+  }
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &:before {
+    content: "";
+    display: inline-block;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    border: 2px solid white;
+  }
+
+  .icon {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 3px;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+  }
+
+  input:checked + .icon {
+    display: block;
+  }
+
 }
