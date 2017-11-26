@@ -15,6 +15,7 @@ gulp.task('browser-sync', function () {
   })
   gulp.watch('./views/**/*.pug', ['html'])
   gulp.watch('./scss/**/*.scss', ['css'])
+  gulp.watch('./js/**/*.js', reload)
 })
 
 gulp.task('css', () => {
