@@ -24,18 +24,65 @@
   }
 
   &-shortlink {
-    margin-top: 60px;
+    margin-top: 40px;
+    @include mq("tablet") {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      display: block;
+      color: inherit;
+      @include mq("tablet") {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      & + a {
+        margin-top: 10px;
+        @include mq("tablet") {
+          margin-top: 0;
+        }
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-store {
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    a {
-      color: inherit;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 45px;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: rgba(black, .15);
       margin-left: 10px;
       margin-right: 10px;
+      border-radius: $border-radius;
+      @include mq("tablet") {
+        height: 50px;
+      }
 
       &:hover {
-        text-decoration: underline;
+        background-color: rgba(black, .3);
+      }
+
+      img {
+        width: 90px;
+        @include mq("tablet") {
+          width: 110px;
+        }
       }
     }
   }
@@ -50,8 +97,10 @@
   box-shadow: 0 20px 40px rgba(black, .2);
 
   @include mq("tablet") {
-    padding: 50px 30px;
+    padding: 50px;
     margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
   &-form {
@@ -67,7 +116,7 @@
     &-item {
       width: 100%;
       @include mq("tablet") {
-        width: auto;
+
       }
       & + & {
         margin-top: 20px;

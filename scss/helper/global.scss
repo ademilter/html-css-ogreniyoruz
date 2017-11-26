@@ -17,6 +17,7 @@ h1, h2, h3 {
 
 a {
   color: $color-navy;
+  transition: .15s;
 }
 
 .icon {
@@ -73,8 +74,7 @@ a {
   padding-right: 10px;
   width: 100%;
 
-  &::placeholder,
-  &::-webkit-datetime-edit {
+  &::placeholder {
     color: rgba($color-navy, .5);
   }
 }
@@ -93,6 +93,7 @@ a {
   }
 
   &-icon {
+    pointer-events: none;
     z-index: 1;
     position: absolute;
     right: 10px;
@@ -105,6 +106,7 @@ a {
   position: relative;
 
   .form-item-icon {
+    pointer-events: none;
     z-index: 1;
     position: absolute;
     left: 10px;

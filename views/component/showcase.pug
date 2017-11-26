@@ -1,0 +1,52 @@
+section.Showcase
+  .container
+
+    h1.Showcase-title More deals than days a year
+    h3.Showcase-subtitle From cosy country homes to funky city flats
+
+    .Search
+      form.Search-form(action='')
+        .Search-form-item
+          .form-item
+            svg.icon.icon-pin_drop.form-item-icon
+              use(xlink:href='#icon-pin_drop')
+            input.text(type='text', placeholder='Location')
+          p.form-description Destination, property name or address
+        .Search-form-item
+          .form-item
+            svg.icon.icon-date_range.form-item-icon
+              use(xlink:href='#icon-date_range')
+            input.text(type='date')
+          p.form-description When
+        .Search-form-item
+          .form-item
+            svg.icon.icon-person.form-item-icon
+              use(xlink:href='#icon-person')
+            .select
+              svg.icon.icon-arrow-bottom.select-icon
+                use(xlink:href='#icon-arrow-bottom')
+              select
+                option(value='') 123
+        .Search-form-item
+          .for-work
+            label.form-checkbox
+              | Are you travelling for work?
+              .checkbox
+                input(type='checkbox')
+                svg.icon.icon-check
+                  use(xlink:href='#icon-check')
+          button.button.button-navy.button-full(type='button')
+            | Let&apos;s get started
+
+    .Showcase-shortlink
+      a(href='') Find deals
+      a(href='') Travel guides
+      a(href='') How was your stay?
+      a(href='') Holiday rentals
+      a(href='') for Business
+
+    .Showcase-store
+      a(href="", class="Showcase-store-link apple")
+        img(src="img/apple.svg")
+      a(href="", class="Showcase-store-link google")
+        img(src="img/google.svg")
