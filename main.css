@@ -1086,11 +1086,24 @@ http://flickity.metafizzy.co
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
   .Aparts-featured-item + .Aparts-featured-item {
-    margin-left: 25px; }
+    margin-top: 25px; }
+  @media (min-width: 768px) {
+    .Aparts-featured {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      .Aparts-featured-item + .Aparts-featured-item {
+        margin-left: 25px;
+        margin-top: 0; } }
   .Aparts-featured-item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1122,7 +1135,7 @@ http://flickity.metafizzy.co
     .Aparts-featured-item .cover {
       position: relative;
       width: 100%;
-      height: 155px;
+      height: 150px;
       background: no-repeat center / cover; }
       .Aparts-featured-item .cover:after {
         content: "";
@@ -1142,7 +1155,8 @@ http://flickity.metafizzy.co
         margin-bottom: 3px;
         color: #083B87;
         font-weight: bold;
-        font-size: 1.2em; }
+        font-size: 1.2em;
+        overflow: hidden; }
       .Aparts-featured-item .content .info {
         display: -webkit-box;
         display: -ms-flexbox;
