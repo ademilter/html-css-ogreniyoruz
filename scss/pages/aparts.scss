@@ -1,0 +1,152 @@
+.Aparts {
+    &-title {
+        color: $color-navy;
+        text-align: center;
+        padding-bottom: 50px;
+        font-size: 3em;
+    }
+
+    &-featured {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        &-item + &-item {
+            margin-left: 25px;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            background-color: white;
+            position: relative;
+
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                box-shadow: 0 0 50px rgba(0,0,0,0.03);
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                border-radius: 100px / 10px;
+            }
+
+            .cover {
+                position: relative;
+                width: 100%;
+                height: 155px;
+                background: no-repeat center / cover;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(45deg, rgba(30,87,153,0.45) 0%,rgba(214,214,214,0.4) 35%,rgba(107,234,116,0.1) 70%,rgba(44,29,140,0.6) 100%);
+                }
+            }
+
+            .content {
+                padding: 10px;
+
+                .title {
+                    display: flex;
+                    margin-top: 10px;
+                    margin-bottom: 3px;
+                    color: $color-navy;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+
+                .info {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    width: 100%;
+                    font-size: 0.7em;
+                    color: rgba($color-gray, 0.5);
+
+                    .location {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
+
+                        .icon-pin {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 18px;
+                            height: 21px;
+                        }
+                    }
+
+                    .reviews {
+                        margin-left: 15px;
+                        text-decoration: underline;
+                    }
+                }
+
+                .description {
+                    margin-top: 10px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    font-size: 0.8em;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .score {
+                position: absolute;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                right: 0;
+                top: 120px;
+                background-color: $color-blue;
+                color: white;
+                display: flex;
+                padding: 5px;
+
+                &-point {
+                    font-weight: bold;
+                    font-size: 1.3em;
+                    margin-left: 10px;
+                }
+
+                &-value {
+                    font-size: 0.7em;
+                    margin-left: 10px;
+                    margin-right: 5px;
+                    padding-bottom: 5px;
+                    color: rgba(white, 0.4);
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 25px;
+        width: 200px;
+        margin-top: 50px;
+        background-color: $color-navy;
+    }
+}
