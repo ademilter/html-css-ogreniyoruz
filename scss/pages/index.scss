@@ -220,3 +220,144 @@
 
   }
 }
+
+
+
+.Destination {
+  
+margin-top: 30px;
+
+&-Title {
+  color: $color-navy;
+  font-size: 40px;
+  text-align: center;
+  font-weight:900;
+  margin-bottom:50px;
+}
+
+&-Items {
+  display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+  .item {
+    width:100%;
+    margin-right:0px;
+    margin-bottom:30px;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+    @include mq("tablet")
+    {
+      width: calc(33.3% - 45px); 
+      flex-direction:row;
+      margin-right: 45px;
+    }
+     &-img {
+      width:100%;
+      margin-right:5%;
+      flex-shrink: 0;
+      padding: 0;
+      @include mq("tablet")
+      {
+        width:35%; 
+      }
+       img {
+         width:100%;
+         height: auto;
+           @include mq("tablet") {
+             height: 100px;
+           }
+       }
+     }
+     &-description {
+       width:100%;
+       display: flex;
+       flex-direction: column;
+       @include mq("tablet"){
+         width:65%;
+       }
+        h4 {
+          color: $color-navy;
+          font-size: 15px;
+          font-weight: 900;
+          margin-bottom: 2px;
+        }
+
+        .item-location {
+          color: #989ba0;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          font-weight: bold;
+          margin-top:1px;
+          margin-bottom: 17px;
+          span {
+            margin-left:3px;
+            margin-right:3px;
+          }
+          i{
+            font-size: 14px;
+          }
+          .speacial-one{
+            background-color: #fbbe00;
+            padding-left: 5px;
+            padding-right: 5px;
+            color:#fff;
+            font-size: 11px;
+            margin-left: 12px; 
+          }
+          .blue {
+            background: $color-blue;
+            margin-left: 2px;
+            padding-top: 2px;
+            padding-bottom: 1px;
+            transform: ROTATEY(-180DEG);
+            i{
+              font-size: 13px;
+            }
+          }
+        }
+        .item-tag {
+        
+            a {
+              font-size: 9px;
+              color: #bac0ca;
+              font-weight: 600;
+              text-decoration: underline;
+              margin-right: 3px;
+            }
+            hr {
+              border-color: rgba($color-blue, .3);
+              border-bottom:none;
+            }
+        }
+     }
+     &-arrow {
+     
+       display: flex;
+       margin-left:10px;
+       margin-top: 2px;
+       justify-content: center; 
+       font-size: 25px;
+       color: #a1a8b6;
+       position: absolute;
+       right: 0;
+       bottom: 43px;
+        @include mq("tablet") {
+          position: static;
+        }
+       }
+  }
+  .blue-button {
+    background:$color-blue;
+    box-shadow: 0px 5px 25px rgba($color-blue,.5);
+    display: flex;
+    height: 98px;
+    color: rgba(white,.7);
+    font-size: 21px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+}
