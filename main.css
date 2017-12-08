@@ -1136,7 +1136,7 @@ http://flickity.metafizzy.co
                 flex-direction: column; }
         @media (min-width: 768px) {
           .Destination-Items .item-description {
-            width: 75%; } }
+            width: 65%; } }
         .Destination-Items .item-description h4 {
           color: #083B87;
           font-size: 15px;
@@ -1185,7 +1185,6 @@ http://flickity.metafizzy.co
           border-color: rgba(1, 172, 238, 0.3);
           border-bottom: none; }
       .Destination-Items .item-arrow {
-        width: 5%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;

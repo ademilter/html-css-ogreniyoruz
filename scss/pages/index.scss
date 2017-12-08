@@ -274,7 +274,7 @@ margin-top: 30px;
        display: flex;
        flex-direction: column;
        @include mq("tablet"){
-         width:75%;
+         width:65%;
        }
         h4 {
           color: $color-navy;
@@ -333,7 +333,7 @@ margin-top: 30px;
         }
      }
      &-arrow {
-       width:5%;
+     
        display: flex;
        margin-left:10px;
        margin-top: 2px;
