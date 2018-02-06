@@ -868,6 +868,9 @@ http://flickity.metafizzy.co
         -ms-flex-align: center;
             align-items: center;
     overflow-x: scroll; }
+    @media (min-width: 768px) {
+      .Navigation .container {
+        overflow-x: hidden; } }
   .Navigation-item {
     margin-right: 20px;
     font-size: 0.9em;

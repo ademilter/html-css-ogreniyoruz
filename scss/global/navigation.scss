@@ -7,6 +7,11 @@
     display: flex;
     align-items: center;
     overflow-x: scroll;
+
+    @include mq("tablet") {
+      overflow-x: hidden;
+    }
+    
   }
 
   &-item {
