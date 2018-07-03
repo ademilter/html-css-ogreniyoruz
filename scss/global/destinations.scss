@@ -1,0 +1,57 @@
+.Destination {
+  h1.Heading {
+    color: $color-navy;
+    margin: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 90%;
+    @include mq('tablet') {
+      grid-template-columns: 30% 30% 30%;
+    }
+    width: 100%;
+    justify-content: space-between;
+  }
+  &-Card {
+    width: 350px;
+    position: relative;
+    .Show-All {
+      display: flex;
+      width: 100%;
+      background: linear-gradient(
+        to bottom right,
+        rgb(6, 94, 177),
+        rgb(50, 140, 241)
+      );
+      h4 {
+        font-size: $font-size;
+        font-weight: lighter;
+        color: $color-soft-blue;
+        align-self: center;
+        margin: auto;
+      }
+    }
+    display: flex;
+    @include mq('tablet') {
+    }
+    height: 100px;
+    margin-bottom: 20px;
+    font-size: $font-size-small;
+    &-Content {
+      padding: 0.5em;
+      h4.title {
+        color: $color-navy;
+      }
+      span {
+        color: gray;
+        font-size: $font-size-xsmall;
+      }
+    }
+    &-Img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

@@ -1,18 +1,17 @@
-@mixin mq($width: "tablet") {
-  @if ($width == "tablet") {
+@mixin mq($width: 'tablet') {
+  @if ($width == 'tablet') {
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {
-      @content
+      @content;
     }
-  } @else if ($width == "desktop") {
-    // Large devices (desktops, 992px and up)
+  } @else if ($width == 'desktop') {
     @media (min-width: 992px) {
-      @content
+      @content;
     }
-  } @else if ($width == "large") {
+  } @else if ($width == 'large') {
     // Extra large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
-      @content
+      @content;
     }
   }
 }

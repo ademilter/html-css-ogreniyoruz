@@ -6,13 +6,16 @@
     height: 100%;
     display: flex;
     align-items: center;
-    overflow-x: scroll;
+    @include mq('desktop') {
+      overflow: hidden;
+    }
   }
-
   &-item {
     margin-right: 20px;
     font-size: $font-size-small;
     color: $color-navy;
   }
-
+  &-item-selected {
+    font-weight: bold;
+  }
 }

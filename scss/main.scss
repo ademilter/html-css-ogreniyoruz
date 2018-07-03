@@ -1,13 +1,15 @@
-@import "config/variable";
-@import "config/mixin";
+@import 'config/variable';
+@import 'config/mixin';
 //
-@import "helper/normalize";
-@import "helper/formalize";
-@import "helper/global";
+@import 'helper/normalize';
+@import 'helper/formalize';
+@import 'helper/global';
 //
-@import "plugin/flickity";
+@import 'plugin/flickity';
 //
-@import "global/header";
-@import "global/navigation";
+@import 'global/header';
+@import 'global/navigation';
+@import 'global/cards';
+@import 'global/destinations';
 //
-@import "pages/index";
+@import 'pages/index';

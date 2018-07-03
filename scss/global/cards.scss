@@ -1,0 +1,37 @@
+.Cards {
+  .container {
+    margin-top: -150px;
+    @include mq('tablet') {
+      display: flex;
+      align-items: flex-end;
+      align-content: flex-end;
+    }
+    @include mq('desktop') {
+      overflow: hidden;
+    }
+  }
+  &-card {
+    @include mq('tablet') {
+      width: 33%;
+    }
+    box-shadow: 0px 0px 30px rgba(117, 117, 117, 0.1);
+    display: block;
+    height: 150px;
+    margin: 20px;
+    padding: 1.5em;
+    h4.title {
+      font-size: $font-size + 1pt;
+      color: $color-navy;
+      margin-bottom: 5px;
+    }
+    span.info {
+      font-size: $font-size-small;
+    }
+    a.card-link {
+      font-size: $font-size-small;
+      display: block;
+      margin-bottom: 5px;
+      color: $color-blue;
+    }
+  }
+}

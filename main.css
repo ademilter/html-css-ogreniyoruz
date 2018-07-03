@@ -442,7 +442,9 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.4; }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2; }
 
 .container {
@@ -453,8 +455,8 @@ h1, h2, h3 {
   padding-right: 20px; }
 
 a {
-  -webkit-transition: .15s;
-  transition: .15s; }
+  -webkit-transition: 0.15s;
+  transition: 0.15s; }
 
 .icon {
   display: inline-block;
@@ -464,7 +466,9 @@ a {
   stroke: currentColor;
   fill: currentColor; }
 
-.select select, .button, .text {
+.select select,
+.button,
+.text {
   font-family: inherit;
   border-radius: 3px;
   border: 0;
@@ -486,7 +490,7 @@ a {
   text-align: center;
   height: 44px;
   color: white;
-  background-color: #01ACEE; }
+  background-color: #01acee; }
   .button-icon {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -499,12 +503,12 @@ a {
   .button-full {
     width: 100%; }
   .button-navy {
-    background-color: #083B87; }
+    background-color: #083b87; }
 
 .text {
   min-height: 44px;
   border-radius: 3px;
-  color: #083B87;
+  color: #083b87;
   padding-left: 10px;
   padding-right: 10px;
   width: 100%; }
@@ -519,7 +523,7 @@ a {
 
 .select {
   position: relative;
-  color: #083B87; }
+  color: #083b87; }
   .select select {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -527,7 +531,7 @@ a {
     display: inline-block;
     width: 100%;
     padding-right: 30px;
-    color: #083B87;
+    color: #083b87;
     height: 44px; }
   .select-icon {
     pointer-events: none;
@@ -548,7 +552,7 @@ a {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    color: #083B87; }
+    color: #083b87; }
   .form-item .text {
     padding-left: 40px; }
   .form-item .select select {
@@ -581,7 +585,7 @@ a {
     left: 0;
     pointer-events: none; }
   .checkbox:before {
-    content: "";
+    content: '';
     display: inline-block;
     font-size: 18px;
     width: 1em;
@@ -846,7 +850,7 @@ http://flickity.metafizzy.co
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 0;
-        color: #083B87;
+        color: #083b87;
         height: 44px; }
         .Header-menu-helper select:nth-child(1) {
           border-bottom-left-radius: 3px;
@@ -858,7 +862,7 @@ http://flickity.metafizzy.co
 
 .Navigation {
   height: 50px;
-  background-color: #F1F6FF; }
+  background-color: #f1f6ff; }
   .Navigation .container {
     height: 100%;
     display: -webkit-box;
@@ -866,18 +870,111 @@ http://flickity.metafizzy.co
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-    overflow-x: scroll; }
+            align-items: center; }
+    @media (min-width: 992px) {
+      .Navigation .container {
+        overflow: hidden; } }
   .Navigation-item {
     margin-right: 20px;
     font-size: 0.9em;
-    color: #083B87; }
+    color: #083b87; }
+  .Navigation-item-selected {
+    font-weight: bold; }
+
+.Cards .container {
+  margin-top: -150px; }
+  @media (min-width: 768px) {
+    .Cards .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      -ms-flex-line-pack: end;
+          align-content: flex-end; } }
+  @media (min-width: 992px) {
+    .Cards .container {
+      overflow: hidden; } }
+
+.Cards-card {
+  -webkit-box-shadow: 0px 0px 30px rgba(117, 117, 117, 0.1);
+          box-shadow: 0px 0px 30px rgba(117, 117, 117, 0.1);
+  display: block;
+  height: 150px;
+  margin: 20px;
+  padding: 1.5em; }
+  @media (min-width: 768px) {
+    .Cards-card {
+      width: 33%; } }
+  .Cards-card h4.title {
+    font-size: 17.33333px;
+    color: #083b87;
+    margin-bottom: 5px; }
+  .Cards-card span.info {
+    font-size: 0.9em; }
+  .Cards-card a.card-link {
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 5px;
+    color: #01acee; }
+
+.Destination h1.Heading {
+  color: #083b87;
+  margin: 20px;
+  margin-bottom: 50px;
+  text-align: center; }
+
+.Destination .container {
+  display: grid;
+  grid-template-columns: 90%;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (min-width: 768px) {
+    .Destination .container {
+      grid-template-columns: 30% 30% 30%; } }
+
+.Destination-Card {
+  width: 350px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  margin-bottom: 20px;
+  font-size: 0.9em; }
+  .Destination-Card .Show-All {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, right bottom, from(#065eb1), to(#328cf1));
+    background: linear-gradient(to bottom right, #065eb1, #328cf1); }
+    .Destination-Card .Show-All h4 {
+      font-size: 16px;
+      font-weight: lighter;
+      color: #f1f6ff;
+      -ms-flex-item-align: center;
+          align-self: center;
+      margin: auto; }
+  .Destination-Card-Content {
+    padding: 0.5em; }
+    .Destination-Card-Content h4.title {
+      color: #083b87; }
+    .Destination-Card-Content span {
+      color: gray;
+      font-size: 0.8em; }
+  .Destination-Card-Img {
+    height: 100px;
+    width: 100px; }
 
 .Showcase {
   color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: #083B87 url(img/showcase_back.jpg) no-repeat center center/cover;
+  background: #083b87 url(img/showcase_back.jpg) no-repeat center center/cover;
   text-align: center; }
   @media (min-width: 768px) {
     .Showcase {
@@ -961,7 +1058,7 @@ http://flickity.metafizzy.co
 .Search {
   text-align: left;
   margin-top: 30px;
-  background-color: #FBBE00;
+  background-color: #fbbe00;
   padding: 20px;
   -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
