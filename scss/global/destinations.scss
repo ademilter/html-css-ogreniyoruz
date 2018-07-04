@@ -30,6 +30,26 @@
         align-self: center;
         margin: auto;
       }
+      &:after {
+        background: linear-gradient(
+          to top left,
+          rgb(6, 94, 177),
+          rgb(50, 140, 241)
+        );
+        opacity: 0;
+        transition: 0.4s;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:hover {
+        &:after {
+          opacity: 0.5;
+        }
+      }
     }
     display: flex;
     @include mq('tablet') {

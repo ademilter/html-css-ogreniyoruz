@@ -14,7 +14,10 @@
     @include mq('tablet') {
       width: 33%;
     }
-    box-shadow: 0px 0px 30px rgba(117, 117, 117, 0.1);
+    &:hover {
+      box-shadow: 0px 0px 30px rgba(117, 117, 117, 0.1);
+      transition: 0.2s;
+    }
     display: block;
     height: 150px;
     margin: 20px;
