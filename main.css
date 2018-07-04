@@ -251,9 +251,9 @@ html [type="button"],
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0; }
 
@@ -261,9 +261,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText; }
 
 /**
@@ -313,8 +313,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   /* 1 */
@@ -324,15 +324,15 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto; }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -341,8 +341,8 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -415,16 +415,39 @@ a {
 img {
   vertical-align: middle; }
 
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, p, pre, fieldset, ul, ol, menu, form {
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre,
+fieldset,
+ul,
+ol,
+menu,
+form {
   margin: 0; }
 
-button, fieldset, iframe {
+button,
+fieldset,
+iframe {
   border: 0; }
 
-fieldset, ul, ol, button, menu {
+fieldset,
+ul,
+ol,
+button,
+menu {
   padding: 0; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
 textarea {
@@ -662,8 +685,8 @@ http://flickity.metafizzy.co
 
 .flickity-prev-next-button:focus {
   outline: none;
-  -webkit-box-shadow: 0 0 0 5px #09F;
-          box-shadow: 0 0 0 5px #09F; }
+  -webkit-box-shadow: 0 0 0 5px #09f;
+          box-shadow: 0 0 0 5px #09f; }
 
 .flickity-prev-next-button:active {
   opacity: 0.6; }
@@ -747,8 +770,8 @@ http://flickity.metafizzy.co
   .Header-menu {
     pointer-events: none;
     opacity: 0;
-    -webkit-transition: .2s;
-    transition: .2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -846,7 +869,7 @@ http://flickity.metafizzy.co
            -moz-appearance: none;
                 appearance: none;
         background-color: transparent;
-        border: 1px solid #E0E6F1;
+        border: 1px solid #e0e6f1;
         padding-left: 10px;
         padding-right: 10px;
         border-radius: 0;
@@ -878,7 +901,7 @@ http://flickity.metafizzy.co
     margin-right: 20px;
     font-size: 0.9em;
     color: #083b87; }
-  .Navigation-item-selected {
+  .Navigation selected {
     font-weight: bold; }
 
 .Cards .container {
@@ -969,6 +992,47 @@ http://flickity.metafizzy.co
   .Destination-Card-Img {
     height: 100px;
     width: 100px; }
+
+.Help {
+  margin-top: 2em; }
+  .Help .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .Help-Card {
+    overflow: hidden;
+    width: 30%;
+    margin: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .Help-Card .help-item-icon {
+      fill: #083b87;
+      visibility: hidden; }
+      @media (min-width: 768px) {
+        .Help-Card .help-item-icon {
+          position: relative;
+          margin: auto;
+          height: auto;
+          visibility: visible;
+          width: 20%; } }
+    @media (min-width: 768px) {
+      .Help-Card-Content {
+        width: 60%;
+        -ms-flex-item-align: center;
+            align-self: center; } }
+    .Help-Card-Content h4.title {
+      font-size: 17.33333px;
+      color: #083b87;
+      margin-bottom: 5px; }
+    .Help-Card-Content span.info {
+      font-size: 0.9em; }
+    .Help-Card-Content a.card-link {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+      color: #01acee; }
 
 .Showcase {
   color: white;
@@ -1156,7 +1220,7 @@ http://flickity.metafizzy.co
       padding: 20px;
       color: white; }
       .Highlights-item-show:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
