@@ -950,17 +950,14 @@ http://flickity.metafizzy.co
 
 .Destination .container {
   display: grid;
-  grid-template-columns: 90%;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
   @media (min-width: 768px) {
     .Destination .container {
       grid-template-columns: 30% 30% 30%; } }
 
 .Destination-Card {
-  width: 350px;
+  width: auto;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;

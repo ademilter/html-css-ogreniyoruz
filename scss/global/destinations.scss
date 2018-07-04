@@ -7,15 +7,13 @@
   }
   .container {
     display: grid;
-    grid-template-columns: 90%;
     @include mq('tablet') {
       grid-template-columns: 30% 30% 30%;
     }
-    width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   &-Card {
-    width: 350px;
+    width: auto;
     position: relative;
     .Show-All {
       display: flex;
