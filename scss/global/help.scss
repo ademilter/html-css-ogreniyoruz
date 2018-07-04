@@ -9,12 +9,14 @@
     width: 30%;
     margin: 2px;
     display: flex;
+    align-items: center;
     .help-item-icon {
       fill: $color-navy;
       visibility: hidden;
       @include mq('tablet') {
         position: relative;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
         height: auto;
         visibility: visible;
         width: 20%;
@@ -23,7 +25,6 @@
     &-Content {
       @include mq('tablet') {
         width: 60%;
-        align-self: center;
       }
       h4.title {
         font-size: $font-size + 1pt;

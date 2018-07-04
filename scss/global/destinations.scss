@@ -2,7 +2,7 @@
   h1.Heading {
     color: $color-navy;
     margin: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     text-align: center;
   }
   .container {
@@ -15,14 +15,15 @@
   &-Card {
     width: auto;
     position: relative;
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+    font-size: $font-size-small;
     .Show-All {
       display: flex;
       width: 100%;
-      background: linear-gradient(
-        to bottom right,
-        rgb(6, 94, 177),
-        rgb(50, 140, 241)
-      );
+      box-shadow: 0px 10px 20px 0px rgba(6, 94, 177, 0.2);
+      background: linear-gradient(to bottom right, $color-navy, $color-blue);
       h4 {
         font-size: $font-size;
         font-weight: lighter;
@@ -31,11 +32,7 @@
         margin: auto;
       }
       &:after {
-        background: linear-gradient(
-          to top left,
-          rgb(6, 94, 177),
-          rgb(50, 140, 241)
-        );
+        background: linear-gradient(to top left, $color-navy, $color-blue);
         opacity: 0;
         transition: 0.4s;
         position: absolute;
@@ -51,12 +48,7 @@
         }
       }
     }
-    display: flex;
-    @include mq('tablet') {
-    }
-    height: 100px;
-    margin-bottom: 20px;
-    font-size: $font-size-small;
+
     &-Content {
       padding: 0.5em;
       h4.title {
@@ -67,6 +59,7 @@
         font-size: $font-size-xsmall;
       }
     }
+
     &-Img {
       height: 100px;
       width: 100px;

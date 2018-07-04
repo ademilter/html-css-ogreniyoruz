@@ -948,7 +948,7 @@ http://flickity.metafizzy.co
 .Destination h1.Heading {
   color: #083b87;
   margin: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   text-align: center; }
 
 .Destination .container {
@@ -973,8 +973,10 @@ http://flickity.metafizzy.co
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    background: -webkit-gradient(linear, left top, right bottom, from(#065eb1), to(#328cf1));
-    background: linear-gradient(to bottom right, #065eb1, #328cf1); }
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(6, 94, 177, 0.2);
+            box-shadow: 0px 10px 20px 0px rgba(6, 94, 177, 0.2);
+    background: -webkit-gradient(linear, left top, right bottom, from(#083b87), to(#01acee));
+    background: linear-gradient(to bottom right, #083b87, #01acee); }
     .Destination-Card .Show-All h4 {
       font-size: 16px;
       font-weight: lighter;
@@ -983,8 +985,8 @@ http://flickity.metafizzy.co
           align-self: center;
       margin: auto; }
     .Destination-Card .Show-All:after {
-      background: -webkit-gradient(linear, right bottom, left top, from(#065eb1), to(#328cf1));
-      background: linear-gradient(to top left, #065eb1, #328cf1);
+      background: -webkit-gradient(linear, right bottom, left top, from(#083b87), to(#01acee));
+      background: linear-gradient(to top left, #083b87, #01acee);
       opacity: 0;
       -webkit-transition: 0.4s;
       transition: 0.4s;
@@ -1021,22 +1023,24 @@ http://flickity.metafizzy.co
     margin: 2px;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
     .Help-Card .help-item-icon {
       fill: #083b87;
       visibility: hidden; }
       @media (min-width: 768px) {
         .Help-Card .help-item-icon {
           position: relative;
-          margin: auto;
+          margin-left: auto;
+          margin-right: auto;
           height: auto;
           visibility: visible;
           width: 20%; } }
     @media (min-width: 768px) {
       .Help-Card-Content {
-        width: 60%;
-        -ms-flex-item-align: center;
-            align-self: center; } }
+        width: 60%; } }
     .Help-Card-Content h4.title {
       font-size: 17.33333px;
       color: #083b87;
@@ -1047,6 +1051,77 @@ http://flickity.metafizzy.co
       font-size: 0.9em;
       margin-bottom: 5px;
       color: #01acee; }
+
+.Discover h1.Heading {
+  color: #083b87;
+  margin: 20px;
+  margin-bottom: 60px;
+  text-align: center; }
+
+.Discover .container {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  @media (min-width: 768px) {
+    .Discover .container {
+      grid-template-columns: 24% 24% 24% 24%; } }
+
+.Discover-Card {
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(http://www.mamzam.com/media/Paris-gallery/crop/200-200/paris-images-1-.jpeg);
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://www.mamzam.com/media/Paris-gallery/crop/200-200/paris-images-1-.jpeg);
+  background-size: cover;
+  padding-top: 50%;
+  margin-bottom: 20px; }
+  .Discover-Card-Content {
+    color: #ffffff;
+    padding-left: 1em;
+    padding-bottom: 1em; }
+    .Discover-Card-Content h4.title {
+      font-size: 21.33333px; }
+    .Discover-Card-Content span {
+      font-size: 0.8em; }
+  .Discover-Card:after {
+    background: #fff;
+    -webkit-box-shadow: 0px 10px 20px 0px #000000;
+            box-shadow: 0px 10px 20px 0px #000000;
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .Discover-Card:hover:after {
+    opacity: 0.1; }
+
+.Discover-Card-More {
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(6, 94, 177, 0.2);
+          box-shadow: 0px 10px 20px 0px rgba(6, 94, 177, 0.2);
+  background-image: none;
+  background: -webkit-gradient(linear, left top, right bottom, from(#083b87), to(#01acee));
+  background: linear-gradient(to bottom right, #083b87, #01acee); }
+  .Discover-Card-More h4.title {
+    font-size: 37.33333px; }
+  .Discover-Card-More:after {
+    background: -webkit-gradient(linear, right bottom, left top, from(#083b87), to(#01acee));
+    background: linear-gradient(to top left, #083b87, #01acee);
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .Discover-Card-More:hover:after {
+    opacity: 0.5; }
 
 .Showcase {
   color: white;
