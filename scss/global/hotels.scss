@@ -1,4 +1,5 @@
 .Hotels {
+  display: block;
   h1.Heading {
     color: $color-navy;
     margin: 20px;
@@ -67,5 +68,11 @@
         font-size: $font-size-xsmall - 0.1em;
       }
     }
+  }
+  .button-container {
+    display: flex;
+  }
+  .button-hotels {
+    margin: 0 auto;
   }
 }

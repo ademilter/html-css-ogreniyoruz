@@ -1123,75 +1123,81 @@ http://flickity.metafizzy.co
   .Discover-Card-More:hover:after {
     opacity: 0.5; }
 
-.Hotels h1.Heading {
-  color: #083b87;
-  margin: 20px;
-  padding-top: 20px;
-  margin-bottom: 80px;
-  text-align: center; }
-
-.Hotels .container {
-  display: grid;
-  grid-template-columns: 48% 48%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-bottom: 20px; }
-  @media (min-width: 768px) {
-    .Hotels .container {
-      grid-template-columns: 20% 20% 20% 20%; } }
-
-.Hotels-Card {
-  height: 270px;
-  width: 100%;
-  padding: 10px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  margin-bottom: 20px; }
-  .Hotels-Card-Img {
-    max-width: 100%;
-    max-height: 100%; }
-  .Hotels-Card .score {
-    background: -webkit-gradient(linear, right top, left top, from(#083b87), to(#01acee));
-    background: linear-gradient(to left, #083b87, #01acee);
-    height: 35px;
+.Hotels {
+  display: block; }
+  .Hotels h1.Heading {
+    color: #083b87;
+    margin: 20px;
+    padding-top: 20px;
+    margin-bottom: 80px;
+    text-align: center; }
+  .Hotels .container {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-bottom: 20px; }
+    @media (min-width: 768px) {
+      .Hotels .container {
+        grid-template-columns: 20% 20% 20% 20%; } }
+  .Hotels-Card {
+    height: 270px;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px; }
+    .Hotels-Card-Img {
+      max-width: 100%;
+      max-height: 100%; }
+    .Hotels-Card .score {
+      background: -webkit-gradient(linear, right top, left top, from(#083b87), to(#01acee));
+      background: linear-gradient(to left, #083b87, #01acee);
+      height: 35px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: auto;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      width: 40%;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      position: relative;
+      top: -30%;
+      left: 10px;
+      z-index: 10;
+      color: #fff; }
+      .Hotels-Card .score .points {
+        font-size: 18.66667px; }
+      .Hotels-Card .score .overall {
+        font-size: 0.8em;
+        font-weight: lighter;
+        padding-left: 0.3em;
+        padding-right: 0.3em; }
+    .Hotels-Card-Content {
+      margin-top: -15%;
+      color: #000;
+      font-weight: 500; }
+      .Hotels-Card-Content h4.title {
+        font-size: 16px;
+        color: #083b87; }
+      .Hotels-Card-Content span.location {
+        display: block;
+        color: gray;
+        font-size: 0.7em;
+        margin-bottom: 0.5em; }
+      .Hotels-Card-Content span.info {
+        font-size: 0.7em; }
+  .Hotels .button-container {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    margin-left: auto;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    width: 40%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    top: -30%;
-    left: 10px;
-    z-index: 10;
-    color: #fff; }
-    .Hotels-Card .score .points {
-      font-size: 18.66667px; }
-    .Hotels-Card .score .overall {
-      font-size: 0.8em;
-      font-weight: lighter;
-      padding-left: 0.3em;
-      padding-right: 0.3em; }
-  .Hotels-Card-Content {
-    margin-top: -15%;
-    color: #000;
-    font-weight: 500; }
-    .Hotels-Card-Content h4.title {
-      font-size: 16px;
-      color: #083b87; }
-    .Hotels-Card-Content span.location {
-      display: block;
-      color: gray;
-      font-size: 0.7em;
-      margin-bottom: 0.5em; }
-    .Hotels-Card-Content span.info {
-      font-size: 0.7em; }
+    display: flex; }
+  .Hotels .button-hotels {
+    margin: 0 auto; }
 
 .Showcase {
   color: white;
