@@ -1,0 +1,44 @@
+.Help {
+  margin-top: 2em;
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  &-Card {
+    overflow: hidden;
+    width: 30%;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    .help-item-icon {
+      fill: $color-navy;
+      visibility: hidden;
+      @include mq('tablet') {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        visibility: visible;
+        width: 20%;
+      }
+    }
+    &-Content {
+      @include mq('tablet') {
+        width: 60%;
+      }
+      h4.title {
+        font-size: $font-size + 1pt;
+        color: $color-navy;
+        margin-bottom: 5px;
+      }
+      span.info {
+        font-size: $font-size-small;
+      }
+      a.card-link {
+        font-size: $font-size-small;
+        margin-bottom: 5px;
+        color: $color-blue;
+      }
+    }
+  }
+}

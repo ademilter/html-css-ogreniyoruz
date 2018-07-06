@@ -1,13 +1,20 @@
-@import "config/variable";
-@import "config/mixin";
+@import 'config/variable';
+@import 'config/mixin';
 //
-@import "helper/normalize";
-@import "helper/formalize";
-@import "helper/global";
+@import 'helper/normalize';
+@import 'helper/formalize';
+@import 'helper/global';
 //
-@import "plugin/flickity";
+@import 'plugin/flickity';
 //
-@import "global/header";
-@import "global/navigation";
+@import 'global/header';
+@import 'global/navigation';
+@import 'global/cards';
+@import 'global/destinations';
+@import 'global/help';
+@import 'global/discover';
+@import 'global/hotels';
+@import 'global/reviews';
+@import 'global/destwelove';
 //
-@import "pages/index";
+@import 'pages/index';

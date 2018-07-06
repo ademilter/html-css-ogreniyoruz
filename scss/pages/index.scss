@@ -2,30 +2,31 @@
   color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: $color-navy url(img/showcase_back.jpg) no-repeat center center / cover;
+  background: $color-navy url(img/showcase_back.jpg) no-repeat center center /
+    cover;
   text-align: center;
 
-  @include mq("tablet") {
+  @include mq('tablet') {
     padding-top: 80px;
     padding-bottom: 170px;
   }
 
   &-title {
-    @include mq("tablet") {
+    @include mq('tablet') {
       font-size: 3em;
     }
   }
 
   &-subtitle {
     margin-top: 10px;
-    @include mq("tablet") {
+    @include mq('tablet') {
       font-size: 1.4em;
     }
   }
 
   &-shortlink {
     margin-top: 40px;
-    @include mq("tablet") {
+    @include mq('tablet') {
       margin-top: 60px;
       display: flex;
       align-items: center;
@@ -35,14 +36,14 @@
     a {
       display: block;
       color: inherit;
-      @include mq("tablet") {
+      @include mq('tablet') {
         margin-left: 10px;
         margin-right: 10px;
       }
 
       & + a {
         margin-top: 10px;
-        @include mq("tablet") {
+        @include mq('tablet') {
           margin-top: 0;
         }
       }
@@ -66,27 +67,26 @@
       height: 45px;
       padding-left: 20px;
       padding-right: 20px;
-      background-color: rgba(black, .15);
+      background-color: rgba(black, 0.15);
       margin-left: 10px;
       margin-right: 10px;
       border-radius: $border-radius;
-      @include mq("tablet") {
+      @include mq('tablet') {
         height: 50px;
       }
 
       &:hover {
-        background-color: rgba(black, .3);
+        background-color: rgba(black, 0.3);
       }
 
       img {
         width: 90px;
-        @include mq("tablet") {
+        @include mq('tablet') {
           width: 110px;
         }
       }
     }
   }
-
 }
 
 .Search {
@@ -94,9 +94,9 @@
   margin-top: 30px;
   background-color: $color-yellow;
   padding: $gutter;
-  box-shadow: 0 20px 40px rgba(black, .2);
+  box-shadow: 0 20px 40px rgba(black, 0.2);
 
-  @include mq("tablet") {
+  @include mq('tablet') {
     padding: 50px;
     margin-top: 50px;
     margin-left: 100px;
@@ -109,18 +109,17 @@
     flex-direction: column;
     align-items: flex-start;
 
-    @include mq("tablet") {
+    @include mq('tablet') {
       flex-direction: row;
     }
 
     &-item {
       width: 100%;
-      @include mq("tablet") {
-
+      @include mq('tablet') {
       }
       & + & {
         margin-top: 20px;
-        @include mq("tablet") {
+        @include mq('tablet') {
           flex-grow: 1;
           margin-top: 0;
           margin-left: 10px;
@@ -135,7 +134,7 @@
     display: flex;
     justify-content: center;
 
-    @include mq("tablet") {
+    @include mq('tablet') {
       position: absolute;
       top: calc(#{$finger-size} + 20px);
       right: 0;
@@ -145,24 +144,21 @@
       margin-left: 10px;
     }
   }
-
 }
 
 .Highlights {
   overflow: hidden;
   margin-bottom: 200px;
   margin-top: 30px;
-  @include mq("tablet") {
+  @include mq('tablet') {
     margin-top: -100px;
     overflow: visible;
   }
 
   &-slider {
-
     .flickity-viewport {
       overflow: visible;
     }
-
   }
 
   &-item {
@@ -170,14 +166,14 @@
     height: 200px;
     margin-right: 30px;
     background-color: yellow;
-    box-shadow: 0 5px 30px rgba(black, .1);
-    @include mq("tablet") {
+    box-shadow: 0 5px 30px rgba(black, 0.1);
+    @include mq('tablet') {
       width: 300px;
     }
 
     &.is-expanded {
       width: 80%;
-      @include mq("tablet") {
+      @include mq('tablet') {
         width: 630px;
       }
     }
@@ -193,13 +189,17 @@
       color: white;
 
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(63, 76, 107, 0.5) 0%, rgba(63, 76, 107, 0.5) 100%);
+        background: linear-gradient(
+          to bottom,
+          rgba(63, 76, 107, 0.5) 0%,
+          rgba(63, 76, 107, 0.5) 100%
+        );
       }
 
       .content {
@@ -211,12 +211,10 @@
         &-item {
         }
       }
-
     }
 
     &-extra {
       display: none;
     }
-
   }
 }

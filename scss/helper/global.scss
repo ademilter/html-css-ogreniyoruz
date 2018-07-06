@@ -3,7 +3,9 @@ body {
   line-height: 1.4;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2;
 }
 
@@ -16,7 +18,7 @@ h1, h2, h3 {
 }
 
 a {
-  transition: .15s;
+  transition: 0.15s;
 }
 
 .icon {
@@ -28,7 +30,9 @@ a {
   fill: currentColor;
 }
 
-.select select, .button, .text {
+.select select,
+.button,
+.text {
   font-family: inherit;
   border-radius: $border-radius;
   border: 0;
@@ -63,6 +67,10 @@ a {
   &-navy {
     background-color: $color-navy;
   }
+  &-white {
+    background-color: #fff;
+    color: $color-navy;
+  }
 }
 
 .text {
@@ -74,7 +82,7 @@ a {
   width: 100%;
 
   &::placeholder {
-    color: rgba($color-navy, .5);
+    color: rgba($color-navy, 0.5);
   }
 }
 
@@ -125,7 +133,7 @@ a {
 .form-description {
   margin-top: 5px;
   font-size: $font-size-small;
-  @include mq("tablet") {
+  @include mq('tablet') {
     margin-top: 20px;
   }
 }
@@ -148,7 +156,7 @@ a {
   }
 
   &:before {
-    content: "";
+    content: '';
     display: inline-block;
     font-size: 18px;
     width: 1em;
@@ -171,5 +179,4 @@ a {
   input:checked + .icon {
     display: block;
   }
-
 }
