@@ -527,6 +527,9 @@ a {
     width: 100%; }
   .button-navy {
     background-color: #083b87; }
+  .button-white {
+    background-color: #fff;
+    color: #083b87; }
 
 .text {
   min-height: 44px;
@@ -1195,9 +1198,111 @@ http://flickity.metafizzy.co
   .Hotels .button-container {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    margin-bottom: 20px; }
   .Hotels .button-hotels {
     margin: 0 auto; }
+
+.Reviews h1.Heading {
+  color: #083b87;
+  margin: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+.Reviews-container {
+  display: grid;
+  grid-template-columns: 90%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 20px; }
+
+.Reviews-description {
+  color: gray;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 18.66667px;
+  justify-self: center;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .Reviews-description {
+      width: 50%; } }
+
+.Reviews .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  justify-self: center;
+  margin-bottom: 50px; }
+  @media (min-width: 768px) {
+    .Reviews .buttons-container {
+      width: 50%; } }
+
+.Reviews-locations-container {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px; }
+  @media (min-width: 768px) {
+    .Reviews-locations-container {
+      width: 75%;
+      grid-template-columns: repeat(5, 1fr); } }
+
+.Reviews-location .title {
+  color: #083b87; }
+
+.Reviews-location .reviews {
+  color: gray;
+  font-size: 0.8em; }
+
+.Destwelove h1.Heading {
+  color: #083b87;
+  margin: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+.Destwelove-container {
+  display: grid;
+  grid-template-columns: 90%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 20px; }
+
+.Destwelove .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .Destwelove .buttons-container .button-dest {
+    font-weight: normal;
+    border-radius: 0; }
+
+.Destwelove-locations-container {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px; }
+  @media (min-width: 768px) {
+    .Destwelove-locations-container {
+      width: 75%;
+      grid-template-columns: repeat(5, 1fr); } }
+
+.Destwelove-location .title {
+  color: #083b87; }
+
+.Destwelove-location .reviews {
+  color: gray;
+  font-size: 0.8em; }
 
 .Showcase {
   color: white;

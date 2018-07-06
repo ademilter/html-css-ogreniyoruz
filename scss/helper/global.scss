@@ -67,6 +67,10 @@ a {
   &-navy {
     background-color: $color-navy;
   }
+  &-white {
+    background-color: #fff;
+    color: $color-navy;
+  }
 }
 
 .text {

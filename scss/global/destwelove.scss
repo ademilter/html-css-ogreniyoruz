@@ -1,0 +1,46 @@
+.Destwelove {
+  h1.Heading {
+    color: $color-navy;
+    margin: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &-container {
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .buttons-container {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .button-dest {
+      font-weight: normal;
+      border-radius: 0;
+    }
+  }
+  &-locations-container {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include mq('tablet') {
+      width: 75%;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    grid-row-gap: 20px;
+  }
+  &-location {
+    .title {
+      color: $color-navy;
+    }
+    .reviews {
+      color: gray;
+      font-size: $font-size-xsmall;
+    }
+  }
+}

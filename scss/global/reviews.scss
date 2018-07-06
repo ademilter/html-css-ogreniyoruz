@@ -1,0 +1,58 @@
+.Reviews {
+  h1.Heading {
+    color: $color-navy;
+    margin: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  //
+  //@include mq('tablet') {
+  //  grid-template-columns: 20% 20% 20% 20%;
+  //}
+  &-container {
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  &-description {
+    @include mq('tablet') {
+      width: 50%;
+    }
+    color: gray;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: $font-size + 2pt;
+    justify-self: center;
+    text-align: center;
+  }
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    @include mq('tablet') {
+      width: 50%;
+    }
+    justify-self: center;
+    margin-bottom: 50px;
+  }
+  &-locations-container {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include mq('tablet') {
+      width: 75%;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    grid-row-gap: 20px;
+  }
+  &-location {
+    .title {
+      color: $color-navy;
+    }
+    .reviews {
+      color: gray;
+      font-size: $font-size-xsmall;
+    }
+  }
+}
