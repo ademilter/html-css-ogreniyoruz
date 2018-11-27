@@ -1,27 +1,26 @@
 section.Showcase
   .container
-
-    h1.Showcase-title More deals than days a year
+    h1.Showcase-title More deals than days in a year
     h3.Showcase-subtitle From cosy country homes to funky city flats
 
     .Search
       form.Search-form(action='')
         .Search-form-item
           .form-item
-            svg.icon.icon-pin_drop.form-item-icon
-              use(xlink:href='#icon-pin_drop')
-            input.text(type='text', placeholder='Location')
+            svg.icon.icon-location.form-item-icon
+              use(xlink:href='#icon-location')
+            input.text(type='text', placeholder='Location', value='')
           p.form-description Destination, property name or address
         .Search-form-item
           .form-item
-            svg.icon.icon-date_range.form-item-icon
-              use(xlink:href='#icon-date_range')
-            input.text(type='date')
+            svg.icon.icon-calendar.form-item-icon
+              use(xlink:href='#icon-calendar')
+            input.text(type='date', name='', value='')
           p.form-description When
         .Search-form-item
           .form-item
-            svg.icon.icon-person.form-item-icon
-              use(xlink:href='#icon-person')
+            svg.icon.icon-user.form-item-icon
+              use(xlink:href='#icon-user')
             .select
               svg.icon.icon-arrow-bottom.select-icon
                 use(xlink:href='#icon-arrow-bottom')
@@ -30,13 +29,12 @@ section.Showcase
         .Search-form-item
           .for-work
             label.form-checkbox
-              | Are you travelling for work?
+              | Are you traveling for work?
               .checkbox
                 input(type='checkbox')
-                svg.icon.icon-check
-                  use(xlink:href='#icon-check')
-          button.button.button-navy.button-full(type='button')
-            | Let&apos;s get started
+                svg.icon.icon-checkmark
+                  use(xlink:href='#icon-checkmark')
+          button.button.button-navy.button-full(type='button', name='button') Let's get started
 
     .Showcase-shortlink
       a(href='') Find deals

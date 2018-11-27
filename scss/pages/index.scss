@@ -1,10 +1,10 @@
 .Showcase {
-  color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: $color-navy url(img/showcase_back.jpg) no-repeat center center / cover;
+  color: $white;
+  background: $navy-blue url(../../img/showcase_back.jpg) no-repeat center center / cover;
   text-align: center;
-
+  
   @include mq("tablet") {
     padding-top: 80px;
     padding-bottom: 170px;
@@ -25,25 +25,28 @@
 
   &-shortlink {
     margin-top: 40px;
+
     @include mq("tablet") {
-      margin-top: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
     }
 
-    a {
+    a{
       display: block;
-      color: inherit;
+      color: inherit; // kapsayıcısının rengini aldı
+    
       @include mq("tablet") {
-        margin-left: 10px;
-        margin-right: 10px;
+         margin-left: 10px;
+         margin-right: 10px;
       }
 
       & + a {
         margin-top: 10px;
+
         @include mq("tablet") {
-          margin-top: 0;
+         margin-top: 0;
         }
       }
 
@@ -51,56 +54,58 @@
         text-decoration: underline;
       }
     }
-  }
+   }
 
-  &-store {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   &-store {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 40px;
 
-    &-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 45px;
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: rgba(black, .15);
-      margin-left: 10px;
-      margin-right: 10px;
-      border-radius: $border-radius;
-      @include mq("tablet") {
-        height: 50px;
-      }
+     &-link {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 45px;
+       padding-right: 20px;
+       padding-left: 20px;
+       margin-left: 10px;
+       margin-right: 10px;
+       background-color: rgba(black, .1);
+       border-radius: $border-radius;
 
-      &:hover {
-        background-color: rgba(black, .3);
-      }
+       @include mq("tablet") {
+         height: 50px;
+       }
+       
+       &:hover {
+         background-color:rgba(black, .3);
+       }
 
-      img {
-        width: 90px;
-        @include mq("tablet") {
-          width: 110px;
+       img {
+         width: 90px;
+         @include mq("tablet") {
+         width: 110px;
         }
-      }
-    }
-  }
+       }
+     }
+   }
+
 
 }
 
 .Search {
   text-align: left;
   margin-top: 30px;
-  background-color: $color-yellow;
+  background-color: $noname_yellow1;
   padding: $gutter;
   box-shadow: 0 20px 40px rgba(black, .2);
 
   @include mq("tablet") {
     padding: 50px;
     margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   &-form {
@@ -115,15 +120,16 @@
 
     &-item {
       width: 100%;
-      @include mq("tablet") {
 
+      @include mq("tablet") {
+        width: auto; // Böylece inputların içeriğine göre boyutlandı
       }
-      & + & {
+      & + & { // ilk search item den sonra gelen search itemlerin top u 20 oldu
         margin-top: 20px;
         @include mq("tablet") {
-          flex-grow: 1;
           margin-top: 0;
           margin-left: 10px;
+          flex-grow: 1;
         }
       }
     }
@@ -145,24 +151,23 @@
       margin-left: 10px;
     }
   }
-
 }
 
 .Highlights {
   overflow: hidden;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   margin-top: 30px;
+
   @include mq("tablet") {
     margin-top: -100px;
     overflow: visible;
   }
 
   &-slider {
-
+      
     .flickity-viewport {
-      overflow: visible;
+    overflow: hidden; // sliderların altında gözüken expanded i gizledik
     }
-
   }
 
   &-item {
@@ -171,12 +176,17 @@
     margin-right: 30px;
     background-color: yellow;
     box-shadow: 0 5px 30px rgba(black, .1);
+
     @include mq("tablet") {
       width: 300px;
     }
 
     &.is-expanded {
       width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      
       @include mq("tablet") {
         width: 630px;
       }
@@ -199,7 +209,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(63, 76, 107, 0.5) 0%, rgba(63, 76, 107, 0.5) 100%);
+        //background: linear-gradient(to bottom, rgba(63, 76, 107, 0.5) 0%, rgba(63, 76, 107, 0.5) 100%);
       }
 
       .content {
@@ -209,13 +219,113 @@
 
       .tag {
         &-item {
+          margin-left: 10px;
         }
       }
 
     }
 
     &-extra {
-      display: none;
+
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      color: $navy-blue;
+  
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;  
+        }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        margin-left: 20px;
+  
+        .button {
+          font-size: 14px;
+        }
+
+        .extra-item {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 10px;
+          margin-bottom: 10px;
+                    
+          .icon {
+            color: rgba(black, .4);
+            width: 14px;
+            height: 14px;
+          }
+
+          .desc-p {
+            margin-left: 10px;
+            font-size: 14px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Sections {
+  margin-top: 100px;
+
+  &-item {
+    margin-left: 20px;
+    width: 100%;
+    height: 200px;
+    margin-right: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    @include mq("tablet") {
+      width: 100%;
+    }
+
+    &-box {
+      width: 100%;
+      height: 100%;
+      margin-right: 60px;
+      margin-left: 60px;
+      background-color: #fff;
+
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: $navy-blue;
+      }
+
+      .desc-p {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: black;
+        font-size: 16px;
+      }
+
+      .desc-link {
+        color: $noname_blue1;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: underline;
+
+        &:hover {
+          color: $navy-blue;
+        }
+      }
     }
 
   }

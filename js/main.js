@@ -7,11 +7,13 @@ $('.Header-switch').on('click', function () {
   }
 })
 
+// flicty kodudur deylı bilgi https://flickity.metafizzy.co
+
 var $carousel = $('.Highlights-slider').flickity({
   cellAlign: 'left',
   contain: true,
-  prevNextButtons: false,
-  pageDots: false
+  prevNextButtons: false, // ileri geri buz-tonunu kapattık
+  pageDots: false // alttaki noktaları kapattık
 })
 var flkty = $carousel.data('flickity')
 
@@ -23,13 +25,13 @@ $carousel.on('staticClick.flickity', function (event, pointer, cellElement, cell
     return
   }
   $carousel.find('.is-expanded').removeClass('is-expanded')
-  $(cellElement).addClass('is-expanded')
-  $carousel.flickity('reposition')
-  $carousel.flickity('select', cellIndex)
+  $(cellElement).addClass('is-expanded') // secili hücrenin genişlemesini sağladı
+  $carousel.flickity('reposition')// geniş hücrenin diğer hüçrelerin üstüne çıkmasını engelledi
+  $carousel.flickity('select', cellIndex) // secili resmin sola gelmesini sağladı
 })
 
-$carousel.on('select.flickity', function () {
-  $carousel.find('.is-expanded').removeClass('is-expanded')
-  $('.Highlights-item:eq(' + flkty.selectedIndex + ')').addClass('is-expanded')
+$carousel.on('select.flickity', function () { // staticclick
+  $carousel.find('.is-expanded').removeClass('is-expanded') // expanded liyi bul ve expandedliyi sil
+  $('.Highlights-item:eq(' + flkty.selectedIndex + ')').addClass('is-expanded') // seçilene expended ata
   $carousel.flickity('reposition')
-})
+  })
