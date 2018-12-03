@@ -990,13 +990,14 @@ body {
       background: white center center no-repeat / cover;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 10px;
+      align-items: flex-end;
+      padding-left: 10px;
       color: white; }
       @media (min-width: 768px) {
         .Highlights-item-show {
           width: 100%;
-          padding: 20px; } }
+          padding-left: 20px;
+          padding-bottom: 20px; } }
       .Highlights-item-show:before {
         content: "";
         position: absolute;
@@ -1009,7 +1010,8 @@ body {
             width: 100%; } }
       .Highlights-item-show .content {
         position: relative;
-        z-index: 1; }
+        z-index: 1;
+        align-self: flex-start; }
       .Highlights-item-show .title {
         margin-bottom: 10px; }
       .Highlights-item-show .tag-title {
@@ -1023,18 +1025,16 @@ body {
           .Highlights-item-show .tag-item {
             font-size: 14px; } }
       .Highlights-item-show .show-span {
-        display: none;
-        position: absolute;
-        right: 165px;
-        top: 25px;
         width: 65px;
         height: 45px;
-        background: #FBBE00; }
+        background: #FBBE00;
+        margin-top: 15px;
+        margin-bottom: 60px; }
         @media (min-width: 768px) {
           .Highlights-item-show .show-span {
-            right: 315px;
             width: 80px;
-            height: 50px; } }
+            height: 50px;
+            margin-bottom: 50px; } }
         .Highlights-item-show .show-span .span-item {
           font-size: 10px;
           margin-right: 5px;
@@ -1145,18 +1145,28 @@ body {
           margin-right: 60px;
           margin-left: 60px; } }
       .Sections-item-box .title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         color: #083b87; }
+        @media (min-width: 768px) {
+          .Sections-item-box .title {
+            font-size: 18px; } }
       .Sections-item-box .desc-p {
         margin-top: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         color: black;
-        font-size: 15px; }
+        font-size: 12px; }
+        @media (min-width: 768px) {
+          .Sections-item-box .desc-p {
+            font-size: 15px;
+            margin-bottom: 10px; } }
       .Sections-item-box .desc-link {
         color: #01ACEE;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
         text-decoration: underline; }
+        @media (min-width: 768px) {
+          .Sections-item-box .desc-link {
+            font-size: 14px; } }
         .Sections-item-box .desc-link:hover {
           color: #083b87; }

@@ -210,13 +210,14 @@
       background: white center center no-repeat / cover;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 10px;
+      align-items: flex-end;
+      padding-left: 10px;
       color: white;
 
       @include mq("tablet") {
         width: 100%;
-        padding: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
       }
 
       &:before {
@@ -236,7 +237,8 @@
       .content {  //resim üzerindeki yazıların bulunduğu kısım
         position: relative;
         z-index: 1;
-      }
+        align-self: flex-start;
+        }
 
       .title { //şehir ismi
         margin-bottom: 10px;
@@ -261,19 +263,16 @@
 
       .show-span {
 
-        display: none;//
-
-        position: absolute;
-        right: 165px;
-        top: 25px;
         width: 65px;
         height: 45px;
         background: $noname_yellow1;
+        margin-top: 15px;
+        margin-bottom: 60px;
 
         @include mq("tablet") {
-          right: 315px;
           width: 80px;
           height: 50px;
+          margin-bottom: 50px;
         }
 
         .span-item {
@@ -424,23 +423,36 @@
       }
 
       .title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         color: $navy-blue;
+
+        @include mq("tablet") {
+          font-size: 18px;
+        }
       }
 
       .desc-p {
         margin-top: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         color: black;
-        font-size: 15px;
+        font-size: 12px;
+
+        @include mq("tablet") {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
       }
 
       .desc-link {
         color: $noname_blue1;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
         text-decoration: underline;
+
+        @include mq("tablet") {
+          font-size: 14px;
+        }
 
         &:hover {
           color: $navy-blue;
