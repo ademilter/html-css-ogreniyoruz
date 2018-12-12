@@ -388,76 +388,555 @@
   }
 }
 
-.Sections {
-  margin-top: 50px;
+.Sections1 {
+  margin-bottom: 30px;
 
-  @include mq("tablet") {
-    margin-top: 100px;
+  @include mq('tablet'){
+    margin-bottom: 100px;
   }
 
-  &-item {
-    width: 100%;
-    height: 200px;
-    background-color: white;
+  // Section1 kapsayıcı kısmı
+  &-main {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;    
+    width: 100%;
+    height: 400px;
+    background: #fff;
 
-    @include mq("tablet") {
-      flex-direction: row;
-      margin-left: 20px;
-      margin-right: 30px;
+    @include mq('tablet'){
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 200px;
     }
 
-    &-box {
-      width: 100%;
-      height: 100%;
-      margin-right: 10px;
-      margin-left: 10px;
-      background-color: #fff;
-      margin-bottom: 40px;
+    // Section1 Box kısmı
+    .Sections1-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      margin-top: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
 
-      @include mq("tablet") {
-      margin-right: 60px;
-      margin-left: 60px;
+      @include mq('tablet'){
+         margin-right: 30px;
+         margin-bottom: 30px;
+         box-shadow: none;
       }
 
-      .title {
-        font-size: 16px;
-        font-weight: bold;
-        color: $navy-blue;
+      &-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 300px;
+        height: 100px;
+        background: #fff;
 
-        @include mq("tablet") {
-          font-size: 18px;
+        &-content {
+          margin-left: 20px;
+
+          &-title {
+            color: $navy-blue;
+            font-size: 16px;
+            font-weight: bold;
+
+            @include mq('tablet'){
+              font-size: 18px;
+            }
+          }
+
+          &-main {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 15px;
+
+            &-desc {
+              color: black;
+              font-size: 12px;
+      
+              @include mq("tablet") {
+                font-size: 14px;
+              }
+            }
+
+            &-link {
+              color: $noname_blue1;
+              font-size: 12px;
+              font-weight: bold;
+              text-decoration: underline;
+      
+              @include mq("tablet") {
+                font-size: 14px;
+              }
+      
+              &:hover {
+                color: $navy-blue;
+              }
+            }
+          }
         }
       }
+    }
+  }
+}
 
-      .desc-p {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        color: black;
-        font-size: 12px;
+.Sections2 {
+  margin-bottom: 50px;
 
-        @include mq("tablet") {
-          font-size: 15px;
-          margin-bottom: 10px;
-        }
+  @include mq('tablet'){
+    margin-bottom: 100px;
+  }
+
+  // more destinations
+  &-title {
+    text-align: center;
+    color: $navy-blue;
+    margin-bottom: 40px;
+
+    @include mq('tablet'){
+      margin-bottom: 70px;
+    }
+  }
+
+  // Section2 kapsayıcı mısmı
+  &-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 100%;
+    height: 600px;
+    background: #fff;
+
+    @include mq('tablet'){
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 200px;
+    }
+
+    // Section2 Box kısmı
+    .Sections2-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      box-shadow: 0 5px 30px rgba(black, .1);
+      margin-bottom: 20px;
+
+      @include mq('tablet'){
+         margin-right: 30px;
+         margin-bottom: 30px;
       }
 
-      .desc-link {
-        color: $noname_blue1;
-        font-size: 12px;
-        font-weight: bold;
-        text-decoration: underline;
+      &-img {
+        width: 90px;
+        height: 90px;
+        background: white center center no-repeat / cover;   
+      }
+  
+      &-item {
+        width: 210px;
+        height: 90px;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
 
-        @include mq("tablet") {
-          font-size: 14px;
+        &-content {
+          margin-left: 20px;
+          margin-top: 5px;
+
+          &-title {
+            color: $navy-blue;
+            font-weight: bold;
+          }
+
+          &-main {
+            color: gray;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 5px;
+
+            &-icon-location {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            .icon {
+              width: 14px;
+              height: 15px;
+            }
+
+            &-desc {
+              font-size: 12px;
+              margin-right: 10px;
+              margin-left: 5px;
+              
+              &:hover {
+                color: $navy-blue;
+              }
+            }
+
+            &-label {
+              background: $noname_yellow1;
+              width: 30px;
+              height: 15px;
+              color: #fff;
+              text-align: center;
+              line-height: 15px;
+              font-size: 11px;
+              margin-right: 5px;
+            }
+
+            &-airplane {
+              background: $noname_blue1;
+              width: 15px;
+              height: 15px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              margin-right: 10px;
+
+              .icon {
+                width: 10px;
+                height: 10px;
+                color: #fff;
+              }
+            }
+          }
+
+          &-tag {
+            margin-top: 10px;
+
+            &-item {
+              margin-right: 5px;
+              font-size: 8px;
+              color: grey;
+              text-decoration: underline;
+
+              &:hover {
+                color: $navy-blue;
+                text-decoration: none;
+              }
+                      
+              @include mq('tablet') {
+                font-size: 10px;
+              }
+            }
+          }
         }
 
-        &:hover {
+        &-arrow {
+          
+          .icon {
+            width: 24px;
+            height: 24px;
+            color: gray;
+            transform: translateY(100%);
+          }
+        }
+      }
+    }
+
+    // Section2 Buton kısmı
+    .Sections2-button {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 300px;
+      height: $finger-size;
+      background: $noname_blue1;
+
+      @include mq('tablet'){
+        height: 90px;
+      }
+
+      &-title {
+        font-size: 14px;
+        color: #fff;
+        line-height: $finger-size;
+        margin-left: 40px;
+        margin-right: 30px;
+
+        @include mq('tablet'){
+          font-size: 16px;
+          font-weight: lighter;
+          line-height: 90px;
+          font-size: 16px;
+        }
+      }
+    
+      &-icon {
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        transform: translateY(40%);
+
+        @include mq('tablet'){
+          transform: translateY(110%);
+        }
+      }
+    }
+  }
+}
+
+.Sections3 {
+  margin-bottom: 30px;
+
+  @include mq('tablet'){
+    margin-bottom: 50px;
+  }
+
+  // Section3 kapsayıcı kısmı
+  &-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 100%;
+    height: 250px;
+    background: #fff;
+
+    @include mq('tablet'){
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    height: 150px;
+    }
+
+    // Section3 Box kısmı
+    .Sections3-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 20px;
+
+      @include mq('tablet'){
+         margin-right: 20px;
+         margin-left: 20px;
+        }
+
+      &-img {
+        width: 50px;
+        height: 100px;
+ 
+        .icon {
+          width: 50px;
+          height: 50px;
           color: $navy-blue;
         }
       }
+  
+      &-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 250px;
+        height: 100px;
+        background: #fff;
+
+        @include mq('tablet'){
+          width: 300px;
+          height: 120px;
+        }
+
+
+        &-content {
+          margin-left: 20px;
+
+          &-title {
+            color: $noname_blue1;
+            font-size: 20px;
+            font-weight: bold;
+
+            @include mq('tablet'){
+              font-size: 24px;
+            }
+          }
+
+          &-subtitle {
+            color: $navy-blue;
+            font-size: 20px;
+            font-weight: bold;
+
+            @include mq('tablet'){
+              font-size: 24px;
+            }
+          }
+
+          &-main {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 15px;
+
+            &-desc {
+              color: black;
+              font-size: 12px;
+      
+              @include mq("tablet") {
+                font-size: 15px;
+              }
+            }
+
+            &-link {
+              color: $noname_blue1;
+              font-size: 12px;
+              font-weight: bold;
+              text-decoration: underline;
+      
+              @include mq("tablet") {
+                font-size: 14px;
+              }
+      
+              &:hover {
+                color: $navy-blue;
+              }
+            }
+          }
+
+        }
+
+
+
+      }
     }
+  }
+}
+
+.Sections4 {
+  margin-bottom: 50px;
+  margin-top: 30px;
+
+  @include mq("tablet") {
+    margin-bottom: 100px;
+    overflow: visible;
+  }
+
+  &-title {
+    text-align: center;
+    color: $navy-blue;
+    margin-bottom: 40px;
+
+    @include mq('tablet'){
+      margin-bottom: 70px;
+    }
+  }
+
+  &-slider {
+
+
+    .flickity-enabled:focus {
+       outline: none; 
+    }
+
+    .flickity-viewport {
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+    }
+    
+    .flickity-slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-item {
+    width: 325px;
+    height: 325px;
+    box-shadow: 0 5px 30px rgba(black, .1);
+    background: #fff;
+    margin-left: 20px;    
+
+    @include mq("tablet") {
+      width: 225px;
+      height: 225px;
+      margin-left: 20px;
+    }
+
+    &-show {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+      background: white center center no-repeat / cover;
+      color: white;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $photo_filter1;
+      }
+      
+      .content {  //resim üzerindeki yazıların bulunduğu kısım
+        position: relative;
+        z-index: 1;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+      }
+
+      .content-main {
+
+        &-title { // top reason visit
+          font-size: 25px;
+          font-weight: bold;
+          margin-bottom: 10px;
+
+          @include mq("tablet") {
+            font-size: 25px;
+          }
+        }
+
+        &-desc { //etiketler
+          font-size: 14px;
+                            
+          @include mq("tablet") {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &-button {
+      width: 325px;
+      height: 325px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+      margin-left: 20px;   
+
+      @include mq("tablet") {
+        width: 225px;
+        height: 225px;
+        margin-left: 20px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $noname_blue1;
+      }
+      
+      .content {  //resim üzerindeki yazıların bulunduğu kısım
+        position: relative;
+        z-index: 1;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+      }
   }
 }

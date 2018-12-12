@@ -13,7 +13,7 @@ var $carousel = $('.Highlights-slider').flickity({
   cellAlign: 'left',
   contain: true,
   prevNextButtons: false, // ileri geri buz-tonunu kapattık
-  pageDots: false // alttaki noktaları kapattık
+  pageDots: false, // alttaki noktaları kapattık
 })
 var flkty = $carousel.data('flickity')
 
