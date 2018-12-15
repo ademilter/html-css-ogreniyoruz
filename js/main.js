@@ -10,7 +10,7 @@ $('.Header-switch').on('click', function () {
 // flicty kodudur deylı bilgi https://flickity.metafizzy.co
 
 var $carousel = $('.Highlights-slider').flickity({
-  cellAlign: 'left',
+  cellAlign: 'center',
   contain: true,
   prevNextButtons: false, // ileri geri buz-tonunu kapattık
   pageDots: false, // alttaki noktaları kapattık

@@ -45,6 +45,14 @@ a{
   color: $white;
   background-color: $noname-blue1; // tüm buton backroundları transparan yaptık
 
+  @include mq('tablet'){
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+
+
+
   &-icon { // menü ikonu
     color: $black;
     justify-content: center;
