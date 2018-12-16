@@ -547,7 +547,7 @@
       margin-bottom: 20px;
 
       @include mq('tablet'){
-         margin-left: 30px;
+         margin-left: 25px;
          margin-bottom: 30px;
       }
 
@@ -966,20 +966,19 @@
 
 .Sections5 {
   margin-bottom: 50px;
-
  
   @include mq('tablet'){
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
 
   // Aparthotels
   &-title {
     text-align: center;
     color: $navy-blue;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 
     @include mq('tablet'){
-      margin-bottom: 40px;
+      margin-bottom: 70px;
     }
   }
 
@@ -1156,7 +1155,6 @@
       width: 140px;
       height: $finger-size;
       background: $navy-blue;
-      margin-bottom: 50px;
 
       &-title {
         font-size: 11px;
@@ -1174,3 +1172,116 @@
       }
     }
 }
+
+.Sections6 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @include mq('tablet'){
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  &-head {
+    color: $navy-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+
+    @include mq('tablet'){
+      width: 100%;
+    }
+    
+    &-title {
+      margin-bottom: 20px;
+      width: 325px;
+
+      @include mq('tablet'){
+        width: 100%;
+      }
+    }
+
+    &-subtitle {
+      width: 325px;
+      font-size: 16px;
+      font-weight: lighter;
+      margin-bottom: 40px;
+
+      @include mq('tablet'){
+        width: 500px;
+      }
+    }
+  }
+
+  &-tabmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+     
+    &-button-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+
+      &-link {
+        padding-right: 10px;
+        padding-left: 10px;
+        height: $finger-size;
+        line-height: $finger-size;
+        background: #fff;
+        font-size: 12px;
+        color: $navy-blue;
+      }
+
+      &-link.aktif {
+        background: $navy-blue;
+        color: #fff;
+      }
+    }
+
+    &-button-content {
+      width: 95%;
+      margin-top: 50px;
+
+      &-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+ 
+        
+        &-item {
+          width: 90px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+
+          @include mq('tablet'){
+            margin-left: 40px;
+            margin-right: 40px;
+          }
+
+          &-title {
+            color: $navy-blue;
+            font-size: 13px;
+            margin-bottom: 5px;
+          }
+
+          &-desc {
+            color: grey;
+            font-size: 11px;
+          }
+        }
+        
+      }
+
+    }
+  }
+}
+

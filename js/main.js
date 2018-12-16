@@ -34,4 +34,31 @@ $carousel.on('select.flickity', function () { // staticclick
   $carousel.find('.is-expanded').removeClass('is-expanded') // expanded liyi bul ve expandedliyi sil
   $('.Highlights-item:eq(' + flkty.selectedIndex + ')').addClass('is-expanded') // seçilene expended ata
   $carousel.flickity('reposition')
-  })
+})
+
+
+// tab menu
+$(function(){
+
+	var tab = $('.Sections6-tabmenu-button-main a'),
+		content = $('.Sections6-tabmenu-button-content');
+	
+	// ilk tab'a aktif sınıfını ata
+	tab.filter(':first').addClass('aktif');
+	
+	// ilk içerik hariç diğerlerini gizle
+	content.filter(':not(:first)').hide();
+	
+	// taba tıklandığında!
+	tab.click(function(){
+		var indis = $(this).index();
+		tab.removeClass('aktif').eq(indis).addClass('aktif');
+		content.hide().eq(indis).fadeIn(500);
+		return false;
+	});
+
+});
+
+ 
+
+
