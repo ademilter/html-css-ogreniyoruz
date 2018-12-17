@@ -126,6 +126,7 @@
       }
       & + & { // ilk search item den sonra gelen search itemlerin top u 20 oldu
         margin-top: 20px;
+
         @include mq("tablet") {
           margin-top: 0;
           margin-left: 10px;
@@ -1285,3 +1286,207 @@
   }
 }
 
+.Showcase2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: $white;
+  background: $navy-blue url(../../img/alt_back.jpg) no-repeat center center / cover;
+  text-align: center;
+  margin-bottom: 100px;
+  
+  @include mq("tablet") {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+
+  &-title {
+    @include mq("tablet") {
+      font-size: 3em;
+    }
+  }
+
+  &-subtitle {
+    margin-top: 10px;
+    @include mq("tablet") {
+      font-size: 1.4em;
+    }
+  }
+
+
+
+}
+
+.Search1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  background-color: transparent;
+  padding: $gutter;
+
+  @include mq("tablet") {
+    padding: 50px;
+  }
+
+  &-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mq("tablet") {
+      flex-direction: row;
+    }
+
+    &-item {
+      width: 100%;
+
+      @include mq("tablet") {
+        width: auto; // Böylece inputların içeriğine göre boyutlandı
+      }
+
+      & + & { // ilk search item den sonra gelen search itemlerin top u 20 oldu
+        margin-top: 20px;
+        @include mq("tablet") {
+          margin-top: 0;
+          // margin-left: 10px;
+          flex-grow: 1;
+        }
+      }
+
+      .text {
+        width: 300px;
+      }
+    }
+  }
+
+  .for-work {
+    font-size: $font-size-small;
+    margin-bottom: 10px;
+
+    @include mq("tablet") {
+      position: absolute;
+      top: calc(#{$finger-size} + 20px);
+      right: 100px;
+    }
+
+    .checkbox {
+      position: absolute;
+      left: 0;
+    }
+    
+    .form-checkbox {
+      margin-left: 25px;
+    }
+  }
+
+  .button {
+    background: $noname_blue1;
+
+    @include mq('tablet'){
+      width: 150px;
+    }
+  }
+
+
+
+}
+
+.Sections7 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @include mq('tablet'){
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  &-head {
+    color: $navy-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+
+    @include mq('tablet'){
+      width: 100%;
+    }
+    
+    &-title {
+      margin-bottom: 50px;
+      width: 325px;
+
+      @include mq('tablet'){
+        width: 100%;
+      }
+    }
+  }
+
+  &-tabmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+     
+    &-button-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+
+      &-link {
+        padding-right: 10px;
+        padding-left: 10px;
+        height: $finger-size;
+        line-height: $finger-size;
+        background: #fff;
+        font-size: 12px;
+        color: $navy-blue;
+      }
+
+      &-link.aktif {
+        background: $navy-blue;
+        color: #fff;
+      }
+    }
+
+    &-button-content {
+      width: 95%;
+      margin-top: 50px;
+
+      &-main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+ 
+        
+        &-item {
+          width: 90px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+
+          @include mq('tablet'){
+            margin-left: 40px;
+            margin-right: 40px;
+          }
+
+          &-title {
+            color: $navy-blue;
+            font-size: 13px;
+            margin-bottom: 5px;
+          }
+
+          &-desc {
+            color: grey;
+            font-size: 11px;
+          }
+        }     
+      }
+    }
+  }
+}

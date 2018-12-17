@@ -60,5 +60,26 @@ $(function(){
 });
 
  
+// tab menu
+$(function(){
+
+	var tab1 = $('.Sections7-tabmenu-button-main a'),
+		content1 = $('.Sections7-tabmenu-button-content');
+	
+	// ilk tab'a aktif sınıfını ata
+	tab1.filter(':first').addClass('aktif');
+	
+	// ilk içerik hariç diğerlerini gizle
+	content1.filter(':not(:first)').hide();
+	
+	// taba tıklandığında!
+	tab1.click(function(){
+		var indis = $(this).index();
+		tab1.removeClass('aktif').eq(indis).addClass('aktif');
+		content1.hide().eq(indis).fadeIn(500);
+		return false;
+	});
+
+});
 
 
