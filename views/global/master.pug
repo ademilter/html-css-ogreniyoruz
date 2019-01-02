@@ -4,7 +4,7 @@ html
     title Title
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i', rel='stylesheet')
-    link(rel='stylesheet', href='main.css')
+    link(rel='stylesheet', href='styles/main.css')
   body
     include icons
     include header
@@ -12,7 +12,10 @@ html
 
     main.Main
       block content
-
+    
     script(src='js/jquery-3.2.1.min.js')
     script(src='js/flickity.pkgd.min.js')
     script(src='js/main.js')
+
+  footer
+    include footer

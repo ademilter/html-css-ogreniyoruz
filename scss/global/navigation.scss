@@ -1,18 +1,17 @@
 .Navigation {
+  background-color: $noname_blue2;
   height: 50px;
-  background-color: $color-soft-blue;
 
   .container {
     height: 100%;
     display: flex;
     align-items: center;
-    overflow-x: scroll;
+    overflow-x: scroll;//x eksenined kaydırma çubuğu
   }
 
   &-item {
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: $font-size-small;
-    color: $color-navy;
+    color: $navy_blue;
   }
-
 }

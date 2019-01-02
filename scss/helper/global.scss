@@ -6,50 +6,56 @@ body {
 h1, h2, h3 {
   line-height: 1.2;
 }
+/*global.scss | github.com/armaganbayraktar01*/
 
+// İçeriğin yer aldığı konteyner
 .container {
+  /* marginleri auto yapma sebebimiz:
+  witdh değil max-width deme sebebimiz ekranın en fazla değer kadar uzamasını istememiz.
+  container genişliği maksimum max-width kadar oldu ve ekran küçüldükçe buda küçülecek*/
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
   padding-left: $gutter;
   padding-right: $gutter;
-}
+  }
 
-a {
+a{
   transition: .15s;
-}
+  }
+/* inputların style işlemleri */
 
-.icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-
-.select select, .button, .text {
-  font-family: inherit;
-  border-radius: $border-radius;
-  border: 0;
+.text, .select select, .button {
+  font-family: inherit;  // kapsayıcındaki fontu kullan
   font-weight: bold;
-  background-color: #fff;
+  border: 0;
+  height: $finger-size;
+  border-radius: $border-radius;
+  // width: 100%;
+  background: $white;
 }
 
-.button {
+
+.button { //header-menu deki button
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
-  text-align: center;
-  height: $finger-size;
-  color: white;
-  background-color: $color-blue;
+  color: $white;
+  background-color: $noname-blue1; // tüm buton backroundları transparan yaptık
 
-  &-icon {
+  @include mq('tablet'){
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+
+
+
+  &-icon { // menü ikonu
+    color: $black;
     justify-content: center;
-    color: black;
     padding-left: 0;
     padding-right: 0;
     width: $finger-size;
@@ -60,48 +66,68 @@ a {
     width: 100%;
   }
 
-  &-navy {
-    background-color: $color-navy;
+  &-navy { //butona ekleyeceğimiz button-blue classı ile button mavi olacak
+    color: $white;
+    background-color: $navy-blue;
   }
 }
 
-.text {
+//iconmoon dan getirdiğimiz iconlarını
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  stroke-width: 0;
+  stroke: currentColor; // biz header.scss de switch de renk atadık, custom color o rengi seçer
+  fill: currentColor;
+}
+
+.text { // inputlardaki textler
+  appearance: none;
   min-height: $finger-size;
   border-radius: $border-radius;
-  color: $color-navy;
   padding-left: 10px;
   padding-right: 10px;
   width: 100%;
+  color: $navy-blue;
 
-  &::placeholder {
-    color: rgba($color-navy, .5);
+    &::placeholder {
+      color: rgba($navy-blue, .5);
+    }
   }
+
+    input[type=date]::-webkit-inner-spin-button, 
+    input[type=date]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 
-.select {
-  position: relative;
-  color: $color-navy;
 
-  select {
-    appearance: none;
-    display: inline-block;
-    width: 100%;
-    padding-right: 30px;
-    color: $color-navy;
-    height: $finger-size;
+  .select {
+    position: relative;
+    color: $navy-blue;
+
+    select {
+      appearance: none;
+      display: inline-block;
+      width: 100%;
+      padding-right: 30px;
+      color: $navy-blue;
+      height: $finger-size;
+ 
+    }
+  
+    &-icon {
+      pointer-events: none;
+      z-index: 1;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
-  &-icon {
-    pointer-events: none;
-    z-index: 1;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.form-item {
+.form-item{
   position: relative;
 
   .form-item-icon {
@@ -109,19 +135,23 @@ a {
     z-index: 1;
     position: absolute;
     left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: $color-navy;
+    // aşağıdaki kullunımın amacı input genişlese bile ikonun yeri hep tam ortalı olacak
+    top: 50%;// yüzde50 aşağı indirdik
+    transform: translateY(-50%); // iconun yüksekliginin yarısı kadar y ekseninde yukarı taşıdık
+    color: $navy-blue;
   }
   .text {
     padding-left: 40px;
+
+    &:placeholder-shown {
+      color: $navy-blue;
+    }
   }
 
   .select select {
     padding-left: 40px;
   }
 }
-
 .form-description {
   margin-top: 5px;
   font-size: $font-size-small;
@@ -139,7 +169,7 @@ a {
   position: relative;
   display: flex;
 
-  input {
+  input { // şuan görmediğiğimiz checkbox. biz yazıya tıklayınca otomatik olarak icon gözükecek
     position: absolute;
     opacity: 0;
     top: 0;
@@ -168,8 +198,10 @@ a {
     height: 20px;
   }
 
-  input:checked + .icon {
+  input:checked + .icon { // input check ise inputtan sonra gelen (+ sonra gelen demek) icon görülsün
     display: block;
   }
-
 }
+
+
+

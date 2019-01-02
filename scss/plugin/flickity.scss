@@ -10,7 +10,7 @@ http://flickity.metafizzy.co
 
 .flickity-viewport {
   overflow: hidden;
-  position: relative;
+  // position: relative;
   height: 100%;
 }
 
@@ -56,7 +56,7 @@ http://flickity.metafizzy.co
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+          transform: translateY(-100%);
 }
 
 .flickity-prev-next-button:hover { background: white; }

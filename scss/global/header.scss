@@ -1,129 +1,139 @@
-$Header-height: 68px;
+// /* header.scss| github.com/armaganbayraktar01*/
+$header_height: 68px;
 
 .Header {
-  height: $Header-height;
-
-  .container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  &-logo {
-    img {
-      width: 144px;
+    height: 68px;
+  
+    .container{
+      position: relative;
+      display: flex; // sayesinde containerdaki iki div yan yana dizildi
+      align-items: center; // container elemanları dikeyde ortalandı
+      height: 100%;
     }
-  }
-
-  &-switch {
-    position: relative;
-    left: 10px;
-    margin-left: auto;
-    @include mq {
-      display: none;
+    &-logo {
+      img{
+        width: 144px;
+      }
     }
-  }
-
-  &-menu {
-    pointer-events: none;
-    opacity: 0;
-    transition: .2s;
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: $Header-height;
-    padding-left: $gutter;
-    padding-right: $gutter;
-    padding-bottom: 20px;
-    flex-direction: column;
-    background-color: white;
-    box-shadow: 0 20px 30px rgba(black, .2);
-
-    .Header.menu-show & {
-      pointer-events: auto;
-      opacity: 1;
-      //transform: translateY(0);
-    }
-
-    @include mq("tablet") {
-      pointer-events: auto;
-      opacity: 1;
-      //transform: translateY(0);
-      transition: 0s;
+  
+    &-switch {
+      position: relative; // relative ile mevcut posizyondandan kayrındık absolute desek en soldan kaydırcaktı
+      left: 10px; // menü ikonunu ikonun solundan 10 birim kaydırdık
       margin-left: auto;
-      flex-direction: row;
-      position: static;
-      box-shadow: none;
-      background-color: transparent;
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
+  
+      @include mq("tablet"){
+        display: none;// tablet ve üstünde gözükmeyecek
+      }
     }
-
-    &-user {
-      margin-right: 10px;
+  
+    &-menu { // header-menu
+      pointer-events: none; // hiç bir Mouse eventinden(tıklama vb) etkilenme
+      opacity: 0;
+      // transform: translateX(100%); // sağdan gelmesini sağladık
+      transition: .2s; // geçiş süresi 2 saniye
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      @include mq("tablet") {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: $header_height;
+      padding-left: $gutter;
+      padding-right: $gutter;
+      padding-bottom: 20px;
+      flex-direction: column; // flex elemanları dikey olarak hizalar
+      background-color: $white;
+      box-shadow: 0 10px 30px rgba(black, .2); // alt çizgiye gölge attık
+  
+      .Header.menu-show & {
+        pointer-events: auto;
+        opacity: 1;
+        // transform: translateY(0);
+      }
+  
+      @include mq("tablet") { // tablet ve üstünde gözükecek
+        pointer-events: auto;
+        opacity: 1; // öncğki özelliği sıfırladık
+        transform: translateY(0); // öncğki özelliği sıfırladık
+        transition: 0s;
+        margin-left: auto; // sayesinde header menu sağa yasladık.
         flex-direction: row;
-      }
-
-      a {
-        width: 100%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-        padding-right: 20px;
-        height: $finger-size;
-        &:hover {
-          background-color: #eee;
-        }
-      }
-    }
-
-    &-property {
-      margin-top: 20px;
-      justify-content: center;
-      @include mq("tablet") {
-        margin-top: 0;
-      }
-    }
-
-    &-helper {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-
-      @include mq("tablet") {
-        margin-left: 20px;
-        margin-top: 0;
-      }
-
-      select {
-        appearance: none;
+        position: static; // mevcut olan position ları sıfırlar
+        box-shadow: none;
         background-color: transparent;
-        border: 1px solid #E0E6F1;
-        padding-left: 10px;
-        padding-right: 10px;
-        border-radius: 0;
-        color: $color-navy;
-        height: $finger-size;
-
-        &:nth-child(1) {
-          border-bottom-left-radius: $border-radius;
-          border-top-left-radius: $border-radius;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+  
+      &-user { // header-menu-user
+        margin-right: 10px;
+        display: flex; // inline elementlerin height width algılaybilmesi için verdik
+        flex-direction: column;
+        align-items: center;
+  
+        @include mq("tablet") { // tablet ve üstünde gözükecek
+          flex-direction: row;
         }
-        &:nth-child(2) {
-          border-left-width: 0;
-          border-bottom-right-radius: $border-radius;
-          border-top-right-radius: $border-radius;
+  
+        a {
+          width: 100%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding-left: 20px;
+          padding-right: 20px;
+          height: $finger-size;
+          border-radius: $border-radius;
+          font-weight: bold;
+          &:hover{
+            background-color: $navy-blue;
+          }
         }
       }
-
+  
+      &-property {
+        margin-top: 20px;
+        justify-content: center;
+  
+        @include mq("tablet") { // tablet ve üstünde gözükecek
+          margin-top: 0;
+        }
+      }
+  
+      &-helper { //header-menu-helper
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+  
+        @include mq("tablet") { // tablet ve üstünde gözükecek
+          margin-left: auto; // sayesinde header menu sağa yasladık.
+          margin-top: 0;
+        }
+  
+        select {
+          appearance: none; // select meüleri editlememizi sağlar
+          border: 1px solid $grey10;
+          color: $navy-blue;
+          background-color: transparent;
+          padding-left: 10px;
+          padding-right: 10px;
+          height: $finger-size;
+          border-radius: 0;
+  
+            &:nth-child(1) {
+              border-bottom-left-radius: $border-radius;
+              border-top-left-radius: $border-radius;
+            }
+  
+            &:nth-child(2) {
+              border-left-width: 0; // dil select kutusunun sol çizgizini zildik.
+              border-top-right-radius: $border-radius;
+            }
+          }
+        }
+      }
     }
+  
+  body{
+    font-family: $font-family;
   }
-}
+  
