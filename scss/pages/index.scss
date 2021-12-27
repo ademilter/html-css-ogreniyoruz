@@ -883,7 +883,7 @@
   }
   &-form-item {
     display: flex;
-
+    max-width: 90%;
     input {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -891,6 +891,9 @@
     .button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+    .form-item {
+      overflow: hidden;
     }
     .form-checkbox {
       margin-top: 20px;

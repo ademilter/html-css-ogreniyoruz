@@ -2244,6 +2244,7 @@ https://flickity.metafizzy.co
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 90%;
 }
 .Subscribe-form-item input {
   border-top-right-radius: 0;
@@ -2252,6 +2253,9 @@ https://flickity.metafizzy.co
 .Subscribe-form-item .button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.Subscribe-form-item .form-item {
+  overflow: hidden;
 }
 .Subscribe-form-item .form-checkbox {
   margin-top: 20px;
