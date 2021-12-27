@@ -51,7 +51,7 @@ Now enter [`localhost:3000`](http://localhost:3000) in the address bar of your b
 
 ### Screenshot
 
-![screenshot](./images/ss-desktop.png)
+![screenshot](./img/ss-desktop.png)
 
 ### Credits
 
