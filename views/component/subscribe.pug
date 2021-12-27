@@ -1,0 +1,20 @@
+section.Subscribe 
+    .container.header 
+        h1.title Save time, save money! 
+        h4.subtitle Sign up and we'll send the best deals to you 
+    .container.subscribe 
+        form.Subscribe-form(action='') 
+            .Subscribe-form-item
+                .form-item
+                    svg.icon.icon-email
+                        use(xlink:href='#icon-email')
+                    input.text(type='email' placeholder='Your email')
+                .form-item 
+                    button.button(type='button') Subscribe
+            .Subscribe-form-item
+                label.form-checkbox
+                    .checkbox
+                        input(type='checkbox')
+                        svg.icon.icon-check
+                            use(xlink:href='#icon-check')
+                    | Send me a link to get the FREE Booking.com app!

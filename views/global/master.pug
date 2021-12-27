@@ -1,18 +1,25 @@
+doctype html
 html
-  head
-    meta(charset='UTF-8')
-    title Title
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i', rel='stylesheet')
-    link(rel='stylesheet', href='main.css')
-  body
-    include icons
-    include header
-    include navigation
+    head
+        meta(charset='utf-8')
+        title Booking.com
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(name='description' content='Explore the world with Booking.com. Big savings on homes, hotels, flights, cars rentals, taxis, and attractions – build your perfect trip on any budget.')
+        meta(name='keywords' content='lodging, accommodation, hotel, Hotels, special offers, packages, specials, weekend breaks, city breaks, deals, budget, cheap, discount, savings')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap' rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' rel='stylesheet')
+        link(rel='stylesheet' href='css/main.css')
+    body 
+        include icons
+        include header
+        include navigation
 
-    main.Main
-      block content
+        main.Main
+            block content
 
-    script(src='js/jquery-3.2.1.min.js')
-    script(src='js/flickity.pkgd.min.js')
-    script(src='js/main.js')
+        script(src='js/jquery-3.6.0.min.js')
+        script(src='js/flickity.pkgd.min.js')
+        script(src='js/main.js')

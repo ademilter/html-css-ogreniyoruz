@@ -3,16 +3,21 @@
   background-color: $color-soft-blue;
 
   .container {
+    overflow: auto;
+    white-space: nowrap;
     height: 100%;
     display: flex;
     align-items: center;
-    overflow-x: scroll;
   }
-
   &-item {
-    margin-right: 20px;
+    margin-right: 40px;
     font-size: $font-size-small;
+    opacity: 0.4;
+    font-weight: 500;
     color: $color-navy;
+    &.active {
+      font-weight: bold;
+      opacity: .8;
+    }
   }
-
 }
