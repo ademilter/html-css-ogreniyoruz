@@ -36,7 +36,7 @@ Topics covered in this tutorial:
 ## Installation
 
 ```bash
-git clone https://github.com/ademilter/html-css-ogreniyoruz.git
+git clone https://github.com/fundakartal/html-css-ogreniyoruz.git
 cd html-css-ogreniyoruz
 npm install or yarn install
 ```
