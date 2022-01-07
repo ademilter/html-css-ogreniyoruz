@@ -1,0 +1,115 @@
+.Footer {
+  background: linear-gradient(
+    135deg,
+    rgb(2, 88, 173) 0%,
+    rgb(0, 84, 168) 52%,
+    rgba(89, 172, 255, 1) 100%
+  );
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  color: darken(#fff, 10%);
+  margin-top: 60px;
+  &-navigation {
+    opacity: 0.9;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    gap: 24px;
+    @include mq('tablet') {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include mq('large') {
+      min-width: 1090px;
+      justify-content: space-between;
+    }
+
+    &-item {
+      @include mq('tablet') {
+        width: calc(50% - 12px);
+      }
+      @include mq('desktop') {
+        width: calc(100% * (1 / 3) - 16px);
+      }
+      @include mq('large') {
+        flex-basis: fit-content;
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+    &-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      &-items {
+        font-size: $font-size-small;
+        opacity: 0.8;
+        width: calc(100% * (1 / 2) - 12px);
+        @include mq('tablet') {
+          width: calc(100% * (1 / 3) - 16px);
+        }
+        @include mq('desktop') {
+          width: calc(100% * (1 / 5) - 19.2px);
+        }
+      }
+    }
+    &-right {
+      display: flex;
+      flex-direction: column;
+      &-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        &-link {
+          padding: 15px;
+          border-radius: $border-radius;
+          background-color: $color-navy;
+          flex-basis: 50%;
+          max-width: 160px;
+          img {
+            width: 100px;
+          }
+        }
+      }
+      .hr {
+        margin-top: 20px;
+      }
+      &-info {
+        p {
+          opacity: 1;
+          font-size: $font-size-medium;
+          margin-bottom: 30px;
+          @include mq('desktop') {
+            font-size: $font-size-small;
+          }
+        }
+        a {
+          text-decoration: underline;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: $font-size-medium;
+    opacity: 0.6;
+    margin-bottom: 10px;
+    text-align: center;
+    @include mq('tablet') {
+      margin-top: 100px;
+    }
+  }
+}

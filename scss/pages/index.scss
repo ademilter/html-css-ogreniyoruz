@@ -1,64 +1,62 @@
 .Showcase {
-  color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: $color-navy url(img/showcase_back.jpg) no-repeat center center / cover;
+  background: $color-navy url(../img/showcase_back.jpg) no-repeat center center /
+    cover;
+  color: white;
   text-align: center;
-
-  @include mq("tablet") {
+  user-select: none;
+  @include mq('tablet') {
     padding-top: 80px;
     padding-bottom: 170px;
   }
-
   &-title {
-    @include mq("tablet") {
-      font-size: 3em;
+    user-select: none;
+    font-size: 2rem;
+    @include mq('tablet') {
+      font-size: 2.5rem;
+    }
+    @include mq('desktop') {
+      font-size: 4rem;
     }
   }
-
   &-subtitle {
-    margin-top: 10px;
-    @include mq("tablet") {
-      font-size: 1.4em;
+    user-select: none;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 20px;
+    opacity: 0.8;
+    @include mq('tablet') {
+      font-size: 1.5rem;
     }
   }
-
   &-shortlink {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     margin-top: 40px;
-    @include mq("tablet") {
-      margin-top: 60px;
-      display: flex;
+    @include mq('tablet') {
+      flex-direction: row;
+      margin-top: 50px;
       align-items: center;
       justify-content: center;
+      column-gap: 30px;
     }
-
     a {
-      display: block;
       color: inherit;
-      @include mq("tablet") {
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-
-      & + a {
-        margin-top: 10px;
-        @include mq("tablet") {
-          margin-top: 0;
-        }
-      }
-
+      font-size: $font-size-medium;
+      opacity: 0.8;
       &:hover {
         text-decoration: underline;
       }
     }
   }
-
   &-store {
     margin-top: 40px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
-
+    column-gap: 20px;
     &-link {
       display: flex;
       align-items: center;
@@ -66,157 +64,844 @@
       height: 45px;
       padding-left: 20px;
       padding-right: 20px;
-      background-color: rgba(black, .15);
-      margin-left: 10px;
-      margin-right: 10px;
+      background-color: rgba($color-navy, 1);
       border-radius: $border-radius;
-      @include mq("tablet") {
+      @include mq('tablet') {
         height: 50px;
       }
-
       &:hover {
-        background-color: rgba(black, .3);
+        background-color: darken($color: $color-navy, $amount: 5);
       }
-
       img {
         width: 90px;
-        @include mq("tablet") {
+        @include mq('tablet') {
           width: 110px;
         }
       }
     }
   }
-
 }
 
 .Search {
-  text-align: left;
-  margin-top: 30px;
+  margin-top: 20px;
   background-color: $color-yellow;
-  padding: $gutter;
-  box-shadow: 0 20px 40px rgba(black, .2);
-
-  @include mq("tablet") {
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(black, 0.2);
+  text-align: left;
+  @include mq('tablet') {
     padding: 50px;
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-top: 40px;
   }
-
+  @include mq('large') {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   &-form {
-    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
-    @include mq("tablet") {
+    position: relative;
+    row-gap: 20px;
+    column-gap: 10px;
+    @include mq('tablet') {
       flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
     }
-
     &-item {
-      width: 100%;
-      @include mq("tablet") {
-
+      position: relative;
+      overflow: hidden;
+      @include mq('tablet') {
+        flex-grow: 1;
+        &:nth-child(1) {
+          min-width: 165px;
+        }
+        &:nth-child(2) {
+          min-width: 200px;
+        }
+        &:nth-child(3) {
+          min-width: 130px;
+        }
       }
-      & + & {
-        margin-top: 20px;
-        @include mq("tablet") {
-          flex-grow: 1;
-          margin-top: 0;
-          margin-left: 10px;
+
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+        @include mq('tablet') {
+          flex-direction: column-reverse;
+          flex-shrink: 0;
         }
       }
     }
   }
-
   .for-work {
     font-size: $font-size-small;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-
-    @include mq("tablet") {
-      position: absolute;
-      top: calc(#{$finger-size} + 20px);
-      right: 0;
+    margin-bottom: 20px;
+    user-select: none;
+    @include mq('tablet') {
+      margin-top: 16px;
+      margin-bottom: 0;
     }
-
     .checkbox {
-      margin-left: 10px;
+      margin-left: 8px;
     }
   }
-
 }
 
 .Highlights {
   overflow: hidden;
-  margin-bottom: 200px;
+  margin-bottom: 30px;
   margin-top: 30px;
-  @include mq("tablet") {
+  padding-bottom: 20px;
+  @include mq('tablet') {
     margin-top: -100px;
-    overflow: visible;
   }
-
   &-slider {
-
     .flickity-viewport {
       overflow: visible;
     }
-
   }
-
   &-item {
-    width: 40%;
+    width: 80%;
     height: 200px;
     margin-right: 30px;
-    background-color: yellow;
-    box-shadow: 0 5px 30px rgba(black, .1);
-    @include mq("tablet") {
+    background-color: #fff;
+    box-shadow: 0 5px 30px rgba(black, 0.1);
+    display: flex;
+    flex-direction: column;
+    @include mq('tablet') {
       width: 300px;
     }
-
-    &.is-expanded {
-      width: 80%;
-      @include mq("tablet") {
-        width: 630px;
-      }
-    }
-
     &-show {
       width: 100%;
       height: 100%;
-      background: white center center no-repeat / cover;
+      background: top center / cover no-repeat $color-yellow;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 20px;
-      color: white;
-
+      color: #fff;
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(63, 76, 107, 0.5) 0%, rgba(63, 76, 107, 0.5) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(30, 87, 153, 0.6) 0%,
+          rgba(41, 137, 216, 0.6) 50%,
+          rgba(32, 124, 202, 0.6) 51%,
+          rgba(125, 185, 232, 0.6) 100%
+        );
       }
 
       .content {
-        position: relative;
         z-index: 1;
-      }
-
-      .tag {
-        &-item {
+        .title {
+          margin-bottom: 8px;
+        }
+        .tag {
+          &-title {
+            opacity: 0.7;
+            font-weight: 400;
+            cursor: auto;
+          }
+          &-item {
+            font-size: $font-size-medium;
+            &:not(:last-child){
+              margin-right: 10px;
+              &:after {
+                position: absolute;
+                content: ',';
+              }
+            }
+          }
+        }
+        .price-label {
+          width: 70px;
+          background-color: $color-yellow;
+          position: absolute;
+          font-size: 0.8rem;
+          font-weight: 700;
+          top: 20px;
+          right: -10px;
+          padding: 3px;
+          box-shadow: 0 5px 10px rgba(black, 0.3);
+          &:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -20px;
+            right: 0;
+            width: 10px;
+            height: 20px;
+            background: $color-yellow;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+          }
+          span {
+            opacity: 0.5;
+            font-weight: 400;
+          }
         }
       }
-
     }
-
     &-extra {
       display: none;
+      width: 100%;
+      .title {
+        color: $color-navy;
+        margin-bottom: 8px;
+      }
+      .icon {
+        opacity: 0.6;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+      }
+      span {
+        font-size: $font-size-small;
+        position: relative;
+        &.date {
+          font-weight: bold;
+          margin-right: 5px;
+          opacity: .9;
+        }
+        &.details {
+          &:before {
+            content: '/ ';
+          }
+        }
+      }
+      .button-details {
+        margin-top: 15px;
+        display: flex;
+        width: max-content;
+      }
+    }
+    &.is-expanded {
+      height: 400px;
+
+      @include mq('tablet') {
+        height: 200px;
+        width: 630px;
+        flex-direction: row;
+      }
+      .Highlights-item-show,
+      .Highlights-item-show:before {
+        height: 50%;
+        @include mq('tablet') {
+          width: 50%;
+          height: 100%;
+        }
+      }
+      .price-label {
+        display: none;
+      }
+      .Highlights-item-extra {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        @include mq('tablet') {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.Cards {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px;
+    @include mq('tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &-item {
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    box-shadow: rgb(235 240 249 / 50%) 5px 5px 20px 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    
+    @include mq('tablet') {
+      height: unset;
+      width: calc(100% * (1 / 3) - 10px);
+      padding: 50px;
+      justify-content: flex-start;
+
+    }
+    &.active {
+      box-shadow: rgba($color-navy, .3) 5px 5px 20px 0px;
     }
 
+    &-title {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: $color-navy;
+    }
+    span {
+      color: $color-blue;
+    }
+    &-content {
+      a {
+        color: $color-blue;
+        text-decoration: underline;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.Destinations {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  .destinations {
+    display: flex;
+    flex-wrap: wrap;
+    color: grey;
+    gap: 24px;
+  }
+  &-item {
+    width: 100%;
+    gap: 10px;
+    height: 220px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(black, 0.1);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 3px;
+    @include mq('tablet') {
+      width: calc(100% * (1 / 2) - 12px);
+    }
+    @include mq('large') {
+      width: calc(100% * (1 / 3) - 16px);
+    }
+    &:last-child {
+      height: auto;
+    }
+    &-img {
+      width: 40%;
+      height: 100%;
+      flex-shrink: 0;
+      transition: transform .4s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        color: $color-navy;
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+      .subtitle {
+        display: flex;
+        font-size: 0.9rem;
+        align-items: flex-start;
+        margin-right: 5px;
+        opacity: 0.9;
+        .icon {
+          height: 20px;
+          width: 20px;
+          margin-right: 3px;
+          &-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 100%;
+            color: #fff;
+            font-size: 0.6rem;
+            background-color: $color-yellow;
+          }
+          &-airplane {
+            color: #fff;
+            background-color: $color-blue;
+            margin-left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.6;
+        font-size: .9rem;
+        margin-top: 15px;
+        position: relative;
+        a {
+          text-decoration: underline;
+          margin-right: 5px;
+          flex-shrink: 0;
+          border-radius: 10px;
+          border: 1px solid rgba(gray, 0);
+          padding: 3px;
+          transition: border 0.3s;
+          &:hover {
+            border: 1px solid rgba(gray, 0.4);
+            text-decoration: none;
+          }
+          &:not(:last-child):not(:hover):after {
+            content: ',';
+            margin-left: 1px;
+          }
+        }
+      }
+      .icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+      }
+    }
+    &-button {
+      width: 100%;
+      font-weight: 200;
+      justify-content: flex-start;
+      padding-left: 50px;
+      font-size: 1.2rem;
+      position: relative;
+      box-shadow: 0 5px 10px rgba(black, 0.2);
+      .icon-icon-right {
+        position: absolute;
+        right: 10px;
+      }
+      @include mq('tablet') {
+        height: 220px;
+      }
+    }
+  }
+  .extra {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    gap: 20px;
+    &-cards {
+      display: flex;
+      column-gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      height: 150px;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 10px rgba(black, 0.1);
+      user-select: none;
+      cursor: pointer;
+      padding-left: 10px;
+      padding-right: 10px;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        box-shadow: 0 5px 20px rgba(black, 0.2);
+        transform: scale(1.05);
+      }
+      @include mq('tablet') {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      
+      @include mq('desktop') {
+        width: calc(100% * (1 / 2) - 10px);
+      }
+
+      &-logo {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: $color-navy;
+        p {
+          position: absolute;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+        .icon.icon-lifebuoy {
+          width: 80%;
+          height: 80%;
+        }
+      }
+      &-content {
+        max-width: 250px;
+        .item-title {
+          line-height: 1.6;
+          font-size: 1rem;
+          margin-bottom: 10px;
+          color: #083b87;
+          span {
+            color: $color-blue;
+          }
+          @include mq('desktop') {
+            font-size: 1.5rem;
+          }
+        }
+
+        .item-text {
+          font-size: .9rem;
+        }
+        a {
+          color: $color-blue;
+          text-decoration: underline;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.Discover {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  .discover {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    @include mq('tablet') {
+      padding-left: 0;
+    }
+  }
+  &-item {
+    color: #fff;
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 10px rgba(black, 0.2);
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px;
+    overflow: hidden;
+    &-content {
+      height: 130px;
+      z-index: 1;
+      text-shadow: 0 5px 10px rgba(black, 0.3);
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        hsla(184, 46%, 72%, 0.5) 0%,
+        hsla(75, 36%, 60%, 0.5) 100%
+      );
+      top: 0;
+      left: 0;
+    }
+    &:last-child {
+      background-color: $color-blue;
+      &:before {
+        display: none;
+      }
+    }
+    @include mq('tablet') {
+      width: calc(100% * (1 / 2) - 12px);
+    }
+    @include mq('desktop') {
+      width: calc(100% * (1 / 4) - 18px);
+    }
+    .icon-right {
+      top: 20%;
+      right: 30px;
+    }
+  }
+}
+
+.Aparthotels {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  .aparthotels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    cursor: pointer;
+  }
+  &-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 3px 20px rgba(black, 0.2);
+    border-radius: 3px;
+    @include mq('tablet') {
+      width: calc(100% * (1 / 2) - 12px);
+    }
+    @include mq('large') {
+      width: calc(100% * (1 / 4) - 18px);
+    }
+
+    &-image {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      .label {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        position: absolute;
+        bottom: 25px;
+        right: -20px;
+        background-color: $color-blue;
+        height: 50px;
+        color: #fff;
+        font-size: small;
+        padding-top: 6px;
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+        span {
+          font-size: 1.5rem;
+          margin-right: 7px;
+          font-weight: 700;
+        }
+        p {
+          opacity: 0.7;
+        }
+      }
+    }
+    &-content {
+      margin-top: 25px;
+      position: relative;
+      .content-title {
+        color: $color-navy;
+        letter-spacing: 1.2px;
+        margin-bottom: 10px;
+      }
+      .content-subtitle {
+        display: flex;
+        align-items: baseline;
+        color: gray;
+
+        .icon-location {
+          height: 15px;
+          width: 15px;
+          margin-right: 5px;
+        }
+        .subtitle {
+          font-weight: 400;
+          letter-spacing: 1.2px;
+          margin-bottom: 10px;
+        }
+        a {
+          position: absolute;
+          text-decoration: underline;
+          right: 0;
+        }
+      }
+    }
+  }
+  .btn {
+    margin-top: 30px;
+    width: 250px;
+    .button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+      height: 55px;
+      .icon {
+        margin-left: 10px;
+      }
+    }
+  }
+  .hr {
+    width: 100%;
+    height: 1px;
+    opacity: 0.3;
+    padding-top: 30px;
+    @include mq('tablet') {
+      padding-top: 70px;
+    }
+  }
+}
+
+.Reviews {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  @include mq('tablet') {
+    margin-bottom: 50px;
+  }
+  .header {
+    text-align: center;
+    .subtitle {
+      color: gray;
+      font-weight: 400;
+      line-height: 1.5;
+      margin: 30px auto;
+      @include mq('desktop') {
+        max-width: 70%;
+      }
+    }
+  }
+  .button-large {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+    .btn {
+      background-color: $color-soft-blue;
+      color: $color-navy;
+      width: 200px;
+      height: $finger-size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      cursor: pointer;
+      @include mq('tablet') {
+        width: calc(100% * (1 / 3) - 50px);
+      }
+      &.active {
+        background-color: $color-navy;
+        color: #fff;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+          background-color: #0b50b7;
+        }
+      }
+    }
+  }
+  .Rev-item {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 24px;
+    text-align: center;
+    .Reviews-item {
+      width: calc(100% * (1 / 3) - 16px);
+      @include mq('tablet') {
+        width: calc(100% * (1 / 4) - 18px);
+      }
+      @include mq('desktop') {
+        width: calc(100% * (1 / 5) - 19.2px);
+      }
+      &-title {
+        color: $color-navy;
+      }
+      &-subtitle {
+        color: gray;
+      }
+    }
+  }
+}
+
+.Subscribe {
+  background: url(../img/alt_back.jpg) center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 400px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  @include mq('tablet') {
+    height: 500px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    color: #fff;
+    .title {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      @include mq('tablet') {
+        font-size: 2.5rem;
+      }
+    }
+    .subtitle {
+      opacity: 0.7;
+      font-weight: 400;
+      @include mq('tablet') {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .subscribe {
+    width: calc(100% - 10px);
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-form-item {
+    display: flex;
+    max-width: 90%;
+    input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .form-item {
+      overflow: hidden;
+    }
+    .form-checkbox {
+      margin-top: 20px;
+      opacity: 0.8;
+      font-size: $font-size-medium;
+      .checkbox {
+        margin-right: 10px;
+      }
+    }
   }
 }

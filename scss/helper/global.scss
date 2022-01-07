@@ -3,20 +3,103 @@ body {
   line-height: 1.4;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.2;
 }
 
 .container {
-  max-width: $max-width;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter;
-  padding-right: $gutter;
+  @include mq('large') {
+    max-width: $max-width;
+  }
+}
+
+.hamburger {
+  width: 20px;
+  display: block;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: none;
+  outline: none;
+  @include mq('tablet') {
+    display: none;
+  }
+
+  .bar,
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background-color: $color-navy;
+    transition: 0.4s;
+  }
+  .bar {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  &.is-active:before {
+    transform: rotate(-45deg) translate(-5px, 2px);
+  }
+  &.is-active .bar {
+    transform: translateX(-35px);
+    background: transparent;
+  }
+  &.is-active:after {
+    transform: rotate(45deg) translate(-9px, -6px);
+  }
 }
 
 a {
-  transition: .15s;
+  transition: 0.2s;
+}
+
+.button {
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  height: $finger-size;
+  color: white;
+  background-color: $color-blue;
+  border-radius: $border-radius;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($color: $color-blue, $amount: 5);
+  }
+  &-icon {
+    justify-content: center;
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    width: $finger-size;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &-full {
+    width: 100%;
+  }
+  &-navy {
+    background-color: $color-navy;
+    &:hover {
+      background-color: lighten($color: $color-navy, $amount: 10);
+    }
+  }
 }
 
 .icon {
@@ -28,85 +111,24 @@ a {
   fill: currentColor;
 }
 
-.select select, .button, .text {
-  font-family: inherit;
-  border-radius: $border-radius;
-  border: 0;
-  font-weight: bold;
-  background-color: #fff;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  height: $finger-size;
-  color: white;
-  background-color: $color-blue;
-
-  &-icon {
-    justify-content: center;
-    color: black;
-    padding-left: 0;
-    padding-right: 0;
-    width: $finger-size;
-    background-color: transparent;
-  }
-
-  &-full {
-    width: 100%;
-  }
-
-  &-navy {
-    background-color: $color-navy;
-  }
-}
-
 .text {
-  min-height: $finger-size;
+  font-family: inherit;
+  border: 0;
   border-radius: $border-radius;
   color: $color-navy;
+  min-height: $finger-size;
+  font-weight: bold;
   padding-left: 10px;
   padding-right: 10px;
-  width: 100%;
-
-  &::placeholder {
-    color: rgba($color-navy, .5);
-  }
-}
-
-.select {
-  position: relative;
-  color: $color-navy;
-
-  select {
-    appearance: none;
-    display: inline-block;
-    width: 100%;
-    padding-right: 30px;
-    color: $color-navy;
-    height: $finger-size;
-  }
-
-  &-icon {
-    pointer-events: none;
-    z-index: 1;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 
 .form-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
 
-  .form-item-icon {
+  .icon {
     pointer-events: none;
-    z-index: 1;
     position: absolute;
     left: 10px;
     top: 50%;
@@ -115,38 +137,38 @@ a {
   }
   .text {
     padding-left: 40px;
-  }
-
-  .select select {
-    padding-left: 40px;
+    &::placeholder {
+      color: rgba($color-navy, .8);
+    }
   }
 }
-
 .form-description {
-  margin-top: 5px;
-  font-size: $font-size-small;
+  display: block;
+  margin-top: 8px;
   @include mq("tablet") {
-    margin-top: 20px;
+    font-size: $font-size-small;
+    margin-top: 16px;
   }
 }
-
 .form-checkbox {
   display: flex;
+  justify-content: center;
   align-items: center;
+  cursor: pointer;
+  @include mq("tablet") {
+    justify-content: flex-end;
+    font-size: $font-size-small;
+  }
 }
 
 .checkbox {
-  position: relative;
   display: flex;
-
+  position: relative;
   input {
     position: absolute;
     opacity: 0;
-    top: 0;
-    left: 0;
     pointer-events: none;
   }
-
   &:before {
     content: "";
     display: inline-block;
@@ -154,22 +176,54 @@ a {
     width: 1em;
     height: 1em;
     border: 2px solid white;
+    border-radius: 2px;
   }
-
   .icon {
     display: none;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    margin-left: 3px;
-    margin-top: -2px;
     width: 20px;
     height: 20px;
+    margin-left: 2px;
+    margin-top: -2px;
   }
-
   input:checked + .icon {
-    display: block;
+    display: inline-block;
   }
+}
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  left: -20px;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+}
+
+.index-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: $color-navy;
+  @include mq('tablet') {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+.icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  opacity: .3;
+  margin-bottom: 30px;
 }
